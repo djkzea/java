@@ -1,0 +1,527 @@
+
+
+
+Közpénzlopós Politikai Szimulátor – Sztori és Játékmenet
+Először is: remek koncepció, a szatirikus megközelítés jól passzol a CLI-s játékstílushoz. Íme egy részletes sztoriváz a párbeszédekkel és mechanikákkal együtt.
+
+Prológus: A Mélypont
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║  "A politika nem arról szól, hogy mit mondasz, hanem arról,       ║
+║   hogy mit nem mondasz el."                                        ║
+║                                        - Ismeretlen bölcs          ║
+╚═══════════════════════════════════════════════════════════════════╝
+Narrátor:
+
+Te vagy Kovács Béla, 34 éves, volt középiskolai tanár. A havi 180 ezres fizetésből nem jött ki a matek: albérlet, gyereknevelés, és a húgod esküvőjére felvett kölcsön. Most 4 millióval tartozol a banknak, és a behajtók már a nevedet is ismerik.
+
+[Telefon csörög]
+
+Ismeretlen hang:
+
+"Kovács úr? Hallottam a helyzetéről. Van egy ajánlatom, amit nem fog tudni visszautasítani. Találkozzunk a Dohány utcai kávézóban, holnap délben. Kérdezzen Lipóti úr után."
+
+1. Fejezet: A Toborzás
+Helyszín: Egy eldugott kávézó, a falon Kossuth-kép és egy rejtélyes grafikon
+
+Lipóti Dezső (középkorú férfi, drága öltöny, olcsó mosoly):
+
+"Üljön le, Kovács úr! Kávét? Pálinkát? Mindkettőt? Látom a szemén, hogy az utóbbi kell. Haha!"
+
+Lipóti:
+
+"Szóval tanár volt. Nemes hivatás, nemde? De tudja, mi a nemesebb? A szolgálat. A NEMZET szolgálata. És mellékesen... nos, a nemzet szolgálata jól fizet."
+
+🎮 VÁLASZTÁSI LEHETŐSÉG #1
+
+
+Mit válaszolsz?
+[1] "Engem csak a pénz érdekel, hagyjuk a nemzeti dumát."
+    → +15 XP, +10 Lebukásmérő
+    → Lipóti: "Őszinte ember! Ezt szeretem. Ilyen emberekre van szükségünk."
+[2] "A nemzet szolgálata mindig is érdekelt..."  
+    → +10 XP, +5 Lebukásmérő
+    → Lipóti: "Szép szavak! Megtanulja még a többit is."
+[3] "Pontosan mi lenne a dolgom?"
+    → +5 XP, +0 Lebukásmérő
+    → Lipóti: "Óvatos! Ez jó. De a részletekbe majd később megyünk bele."
+Lipóti (folytatja):
+
+"A Fityesz nem csak egy párt, Kovács úr. Család. És a családban mindenkiről gondoskodunk. Nézze csak..."
+
+Kitesz az asztalra egy borítékot. Kinyitod: 500 ezer forint készpénz.
+
+Lipóti:
+
+"Ez csak az eleje. Előleg a jövőbeni... hűségéért. Ahogy a Miniszterelnök Úr mondta egyszer..."
+
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║  "Nekünk a Jóisten is megbocsát, mert a győzteseknek mindent      ║
+║   megbocsát a történelem."                                         ║
+║                                        - Kapzsi Imre               ║
+╚═══════════════════════════════════════════════════════════════════╝
+🎮 VÁLASZTÁSI LEHETŐSÉG #2
+
+
+Elfogadod a pénzt?
+[1] Elveszed és bólogatsz.
+    → +20 XP, +15 Lebukásmérő
+    → 💰 TÁRGY SZERZÉS: "Első Boríték" (később felhasználható)
+[2] Elveszed, de kérdezel: "Mi a feltétel?"
+    → +10 XP, +5 Lebukásmérő
+    → Lipóti: "Feltétel? Csak annyi, hogy holnap megjelensz ezen a címen."
+[3] Nem nyúlsz hozzá.
+    → +0 XP, -10 Lebukásmérő
+    → Lipóti: "Ó, tehát alkudni akar! Maga tényleg politikusnak született!"
+2. Fejezet: Az Első Gyűlés
+Helyszín: Egy kerületi irodaépület, piros-fehér-zöld zászlók mindenhol
+
+Narrátor:
+
+A teremben körülbelül 30 ember ül műanyag székeken. A falon gigantikus Kapzsi Imre-portré, alatta a felirat: "CSAK FELFELÉ!"
+
+Lakatos Ervin (helyi párttitkár, túlsúlyos, izzadt):
+
+"Na, te vagy az új! Kovács, ugye? Gyere, gyere! Pont jókor jöttél, ma van a havi... izé... KÖZÖSSÉGI TALÁLKOZÓ. Igen, úgy hívjuk. Hehe."
+
+A teremben az emberek borítékokat osztogatnak egymás között.
+
+Lakatos:
+
+"Figyelj, itt egyszerűek a szabályok. Egy: amit látsz, nem láttad. Kettő: amit hallasz, nem hallottad. Három: amit kapsz, az jutalom a kemény munkáért. Négy: minden a Főnökért. Világos?"
+
+🎮 VÁLASZTÁSI LEHETŐSÉG #3
+
+
+Hogyan reagálsz?
+[1] "Teljesen világos. Hol az én borítékom?"
+    → +25 XP, +20 Lebukásmérő
+    → Lakatos: "Na EZ a hozzáállás! Fiúk, szeretni fogjátok ezt az embert!"
+    → 💰 TÁRGY: "Kis Boríték" (+50.000 Ft a számlán)
+[2] "És ha valaki lebukik?"
+    → +10 XP, +5 Lebukásmérő
+    → Lakatos: "Lebukás? Haha! Mi vagyunk a hatalom, kisfiam!"
+[3] Csendben maradsz és figyelsz.
+    → +5 XP, +0 Lebukásmérő
+    → Lakatos néz egy darabig, majd: "A néma gyereknek az anyja sem érti a szavát..."
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║  "Nem az a baj, hogy lopnak. Az a baj, hogy nem osztják meg       ║
+║   mindenkivel."                                                    ║
+║                                        - Anonim pártaktivista      ║
+╚═══════════════════════════════════════════════════════════════════╝
+3. Fejezet: A Kongresszusi Próba
+Narrátor:
+
+Két hónap telt el. Szorgalmasan jártál a gyűlésekre, osztottad a szórólapokat, és megtanultad, mikor kell tapsolni. Most előléptettek: meghívást kaptál a Kongresszusra.
+
+Helyszín: Hatalmas rendezvénycsarnok, ezrek a nézőtéren
+
+Hangszóró:
+
+"Tisztelt Kongresszus! Kérjük, álljanak fel és köszöntsék a Nemzet Megmentőjét, a Haza Pajzsát, Kapzsi Imre Miniszterelnök Urat!"
+
+A tömeg felugrik. Te is.
+
+Kapzsi Imre (a színpadon, karját széttárva):
+
+"Magyarok! Testvéreim! Mi vagyunk az utolsó bástya a... a... nos, mindenki ellen, aki nem mi vagyunk! Haha!"
+
+A tömeg nevet.
+
+Kapzsi:
+
+"Tudják, mit mondott nekem ma reggel a szakácsunk? Azt mondta: 'Miniszterelnök Úr, maga a legnagyobb!' És én mit válaszoltam? Azt mondtam: 'TUDOM!'"
+
+Mennydörgő taps.
+
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║  "Mi nem politizálunk. Mi KORMÁNYZUNK!"                           ║
+║                                        - Kapzsi Imre               ║
+╚═══════════════════════════════════════════════════════════════════╝
+⚔️ ELSŐ BOSSFIGHT: Lakatos Ervin, a Helyi Párttitkár
+Előzmény:
+
+Lakatos megtudta, hogy te is pályázol a választmányi helyre. Nem nézi jó szemmel a versenyt. Kihív egy "baráti vitára" – ami valójában nyilvános megalázási kísérlet.
+
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                    ⚔️  BOSSFIGHT  ⚔️                               ║
+║                                                                    ║
+║   LAKATOS ERVIN                         KOVÁCS BÉLA (TE)           ║
+║   "A Helyi Hatalom"                                                ║
+║   ❤️ HP: 100/100                         ❤️ HP: 80/80              ║
+║                                                                    ║
+║   KÜLÖNLEGES: "Feljelentés" - Ha 3x egymás után ugyanazt           ║
+║   választod, automatikusan 30 sebzés                               ║
+╚═══════════════════════════════════════════════════════════════════╝
+Mit lépsz?
+[1] TÁMADÁS - Éles riposzt a múltbeli ügyeiről
+[2] VÉDÉS - Politikailag korrekt kitérő
+Lakatos támadása (ha ő nyer egy kört):
+
+"Na és maga, Kovács úr? Hallottam, tanár volt! És FELMOND!!! Mit szólnának ehhez a szavazók, hm?"
+
+Te támadásod (ha te nyersz):
+
+"Érdekes, Lakatos úr, hogy a felújított irodáját pont az ön sógora cége építette. Véletlen egybeesés?"
+
+Győzelem után:
+
+Lakatos (lihegve):
+
+"Jó... jó vagy, kisfiam. Talán túl jó. De figyelj... ez a játék veszélyes. A tetején... a tetején már nincsenek szabályok."
+
+🏆 JUTALOM: +50 XP, "Lakatos Aktája" tárgy (zsaroláshoz használható később)
+
+4. Fejezet: Az Országos Választmány Árnyai
+Helyszín: Elegáns irodaépület, 5. emelet, panorámás kilátás
+
+Narrátor:
+
+Feljutottál a Választmányba. A boríték most már vastagabb, az autó most már szolgálati. De a játékosok is veszélyesebbek.
+
+Személy: Dr. Péteri Katalin, a Választmány alelnöke
+
+Dr. Péteri (hideg mosoly, tökéletes frizura):
+
+"Kovács Béla! Hallottam magáról. Gyorsan emelkedik. Talán túl gyorsan. Tudja, mit mondanak a régi rókák?"
+
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║  "Aki gyorsan emelkedik, az gyorsan is eshet."                    ║
+║                                        - Dr. Péteri Katalin        ║
+╚═══════════════════════════════════════════════════════════════════╝
+Dr. Péteri:
+
+"De ne aggódjon. Én segíteni akarok. Van itt egy... projekt. EU-s pályázat. 800 millió forint. A papírmunka már megvan, csak... kell valaki, aki aláírja. Érti?"
+
+🎮 VÁLASZTÁSI LEHETŐSÉG #4
+
+
+Mit válaszolsz?
+[1] "Mennyi az én részem?"
+    → +30 XP, +30 Lebukásmérő
+    → Dr. Péteri: "10%. De ez csak az első üzlet."
+    → 💰 TÁRGY: "Offshore Számla Belépési Kód"
+[2] "Kinek a projektje ez valójában?"
+    → +15 XP, +10 Lebukásmérő  
+    → Dr. Péteri: "Kíváncsi kis ember... Ez tetszik. De a nevek nem fontosak."
+[3] "Ezt át kell gondolnom."
+    → +5 XP, +5 Lebukásmérő
+    → Dr. Péteri: "Gondolja át. De ne túl sokáig. Az idő pénz – szó szerint."
+5. Fejezet: A Parlamenti Útvesztő
+Helyszín: Parlament, folyosók és titkos szobák
+
+Narrátor:
+
+Most már parlamenti képviselő vagy. Van irodád, van asszisztensed, és van egy hosszú lista arról, hogy kinek mivel tartozol.
+
+Molnár Gábor (frakcióvezető-helyettes, idősebb, cinikus):
+
+"Gratulálok a mandátumhoz, Kovács! Most már az elit része vagy. Na, nem az igazi elité, ahhoz még messze vagy. De a kapuban állsz."
+
+Átad egy dossziét.
+
+Molnár:
+
+"Ez a holnapi szavazás. Az EU-kritikus állásfoglalás. Te MELLETTE szavazol. Nem ELLENE, nem TARTÓZKODSZ. MELLETTE. Világos?"
+
+🎮 VÁLASZTÁSI LEHETŐSÉG #5
+
+
+Hogyan reagálsz?
+[1] "Persze. Hol kell aláírni?"
+    → +20 XP, +15 Lebukásmérő
+    → Molnár: "Látom, gyorsan tanul. Ez jó."
+[2] "És ha esetleg a saját véleményem más?"
+    → +10 XP, +20 Lebukásmérő
+    → Molnár: *nevet* "Vélemény? VÉLEMÉNY?! Kovács, maga vicces ember."
+[3] "Előbb elolvasom a javaslatot."
+    → +5 XP, +0 Lebukásmérő
+    → Molnár: "Olvasás? Hm. Furcsa szokás. De legyen."
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║  "A demokrácia az, amikor mi döntünk. A diktatúra az,             ║
+║   amikor mások. Egyszerű."                                         ║
+║                                        - Kapzsi Imre               ║
+╚═══════════════════════════════════════════════════════════════════╝
+⚔️ MÁSODIK BOSSFIGHT: Dr. Péteri Katalin, a "Jégkirálynő"
+Előzmény:
+
+Megtudtad, hogy Dr. Péteri az előléptetésedért cserébe 50%-os részesedést akar minden jövőbeli üzletedből. Ideje tisztázni a viszonyokat.
+
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                    ⚔️  BOSSFIGHT  ⚔️                               ║
+║                                                                    ║
+║   DR. PÉTERI KATALIN                    KOVÁCS BÉLA (TE)           ║
+║   "A Jégkirálynő"                                                  ║
+║   ❤️ HP: 150/150                         ❤️ HP: 100/100            ║
+║                                                                    ║
+║   KÜLÖNLEGES: "Médiabotrány" - 2 körönként -20 HP neked,           ║
+║   ha nem támadsz                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+Dr. Péteri támadása:
+
+"Tudod, Kovács, megvannak a számlái. Az offshore-ok. Egy telefonhívás, és holnap a címlapon leszel. De nem úgy, ahogy szeretnéd."
+
+Te támadásod:
+
+"Érdekes, Dr. Péteri. Vajon mit szólna a Főnök, ha megtudná, hogy a lányát Londonban taníttatja – pont abból a pénzből, amit 'hazafiságra' kellett volna költeni?"
+
+Győzelem után:
+
+Dr. Péteri:
+
+"Alulbecsültelek, Kovács. Ez... ritka. Rendben. Legyen 20%, és többet nem hallasz rólam. De egy napon... egy napon szükséged lesz rám."
+
+🏆 JUTALOM: +80 XP, "Péteri Dosszié" tárgy, +20.000.000 Ft
+
+6. Fejezet: Az Országos Elnökség Kapujában
+Helyszín: Elit vadászkastély, éjszaka, szivarfüst
+
+Narrátor:
+
+Meghívást kaptál a "belső körbe". Ahova nem mindenki juthat be. A szobában a párt legbefolyásosabb emberei ülnek bőrfotelekben.
+
+Kapzsi Imre (személyesen, először beszél hozzád):
+
+"Szóval te vagy Kovács. Hallottam rólad. Gyorsan mászol. Ez jó. De tudod, mi a különbség a mászó és a csillag között?"
+
+Csend. Mindenki téged néz.
+
+Kapzsi:
+
+"A mászó bármikor leeshet. A csillag... a csillag örökké ragyog. Na persze, amíg MI ragyogtatjuk. Haha!"
+
+A szoba nevet.
+
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║  "A hatalom nem korrupt. A hatalom hatalom.                       ║
+║   A korrupció csak... stíluskérdés."                               ║
+║                                        - Kapzsi Imre               ║
+╚═══════════════════════════════════════════════════════════════════╝
+Kapzsi:
+
+"Figyelj, Kovács. Van egy kis... probléma. Az ellenzék túl hangos lett. Szükségünk van valakire, aki... nos, aki megoldja. Kreatívan. Érted, ugye?"
+
+🎮 VÁLASZTÁSI LEHETŐSÉG #6
+
+
+Mit válaszolsz?
+[1] "Bármit, Főnök. Csak mondja, mit."
+    → +50 XP, +40 Lebukásmérő
+    → Kapzsi: "NA EZ AZ! Ilyen embereket akarok! Gyere ide, ülj mellém!"
+    → 💰 TÁRGY: "Főnök Bizalma" (kritikus a végső bossfighthoz)
+[2] "Milyen jellegű 'megoldásra' gondol?"
+    → +25 XP, +15 Lebukásmérő
+    → Kapzsi: "Óvatos! Ez bölcs. De néha a bölcsesség lassít."
+[3] *Meghajolsz, de nem szólsz semmit*
+    → +10 XP, +5 Lebukásmérő
+    → Kapzsi: "Hm. A néma kutya sosem harap. De sosem is véd."
+⚔️ HARMADIK BOSSFIGHT: Molnár Gábor, "A Túlélő"
+Előzmény:
+
+Molnár 30 éve van a pártban. Túlélt mindent és mindenkit. Most téged lát a legnagyobb fenyegetésnek. Ideje a végső leszámolásnak.
+
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                    ⚔️  BOSSFIGHT  ⚔️                               ║
+║                                                                    ║
+║   DR. PÉTERI KATALIN                    KOVÁCS BÉLA (TE)           ║
+║   "A Jégkirálynő"                                                  ║
+║   ❤️ HP: 150/150                         ❤️ HP: 100/100            ║
+║                                                                    ║
+║   KÜLÖNLEGES: "Médiabotrány" - 2 körönként -20 HP neked,           ║
+║   ha nem támadsz                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+Molnár támadása:
+
+"Tudod, hány ilyen kis karrieristát láttam már? Száz? Kétszáz? Mind ott végezték, ahonnan indultak. A porban."
+
+Te támadásod:
+
+"Molnár úr, van itt egy hangfelvétel 2018-ból. Érdekes dolgokat mond rajta a Főnökről. Nagyon... őszinte dolgokat."
+
+Győzelem után:
+
+Molnár (összetörve):
+
+"Harminc év... harminc év hűség... és így végződik. Gratulálok, Kovács. De ne feledd: amit te tettél velem, azt majd más teszi veled. Ez a játék. És a játék sosem ér véget."
+
+🏆 JUTALOM: +120 XP, "Parlamenti Többség Kulcsa" tárgy, Elnökségi pozíció megnyitva
+
+7. Fejezet: Az Elnökség Trónján
+Helyszín: A párt központja, az elnökségi terem
+
+Narrátor:
+
+Most már az Országos Elnökség tagja vagy. A hatalom szaga érezhető – és kissé rothadt. De te már hozzászoktál.
+
+Kapzsi Imre (bizalmas hangnemben):
+
+"Kovács! Gyere, sétáljunk. Van valami, amit csak neked mondok el."
+
+Kimegy vele a kertbe. Senki más nincs ott.
+
+Kapzsi:
+
+"Tudod, én nem leszek örökké. Nem, nem, ne tiltakozz. Mindenki halandó. És nekem... nos, nekem szükségem van valakire, aki folytatja. Aki érti, hogyan működik ez az egész."
+
+Megáll. Ránéz.
+
+Kapzsi:
+
+"Te lehetnél az, Kovács. De előbb... előbb bizonyítanod kell. Van egy utolsó teszt."
+
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║  "Az igazi vezető nem az, aki parancsol.                          ║
+║   Hanem az, akinek nem kell parancsolnia –                         ║
+║   mert mindenki már eleve azt teszi, amit ő akar."                 ║
+║                                        - Kapzsi Imre               ║
+╚═══════════════════════════════════════════════════════════════════╝
+🎮 DÖNTŐ VÁLASZTÁS
+
+
+Mit válaszolsz?
+[1] "Bármi lesz, kész vagyok rá."
+    → VÉGSŐ BOSSFIGHT megnyílik (Kapzsi ellen)
+    → Kapzsi: "Bármi? Bármi egy veszélyes szó, kisfiam. De legyen."
+[2] "Mi lenne ez a teszt?"
+    → VÉGSŐ BOSSFIGHT megnyílik (több információval)
+    → Kapzsi: "Az egyetlen teszt, ami számít: le kell győznöd engem."
+[3] "Talán még nem vagyok készen..."
+    → -50 XP, játék folytatódik, de más út nyílik
+    → Kapzsi: "Hm. Az önismeret erény. De a gyávaság nem."
+⚔️ VÉGSŐ BOSSFIGHT: Kapzsi Imre, "A Főnök"
+Helyszín: A párt titkos tanácsterme, éjfél
+
+Narrátor:
+
+Ez az a pillanat, amire minden eddig történt felkészített. Kapzsi tudja, hogy te vagy az egyetlen, aki fenyegetést jelenthet rá. És te is tudod: csak egyikőtök maradhat a csúcson.
+
+
+
+╔═══════════════════════════════════════════════════════════════════════╗
+║                    ⚔️  VÉGSŐ BOSSFIGHT  ⚔️                             ║
+║                                                                        ║
+║   KAPZSI IMRE                             KOVÁCS BÉLA (TE)             ║
+║   "A Főnök"                                                            ║
+║   ❤️ HP: 300/300                           ❤️ HP: 150/150              ║
+║                                                                        ║
+║   KÜLÖNLEGES KÉPESSÉGEK:                                               ║
+║   - "Média Manipuláció" - Minden 2. körben -15 HP neked               ║
+║   - "Hűséges Talpnyalók" - 3 körönként +50 HP magának                  ║
+║   - "Végső Szónoklat" - HP alatt 50: dupla sebzés                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+💡 TIPP: Ha megvan a "Főnök Bizalma" tárgyad, Kapzsi támadásai 30%-kal gyengébbek!
+
+Kapzsi (csata közben):
+
+"Tudod, Kovács, én építettem ezt az egészet! Minden forint, minden szavazat, minden ember – MIND ÉN VAGYOK!"
+
+Te támadásod:
+
+"Főnök, az a baj, hogy túl sok ember tudja már, hogyan működik a rendszer. És most már én is egy vagyok közülük."
+
+Kapzsi (50 HP alatt):
+
+"Hát jó! Ha így akarod! De ne feledd: aki megöli a királyt, az maga lesz a király. És a királyokat... nos, a királyokat mindig megölik. MINDIG!"
+
+Epilógus: A Trón
+[HA NYERTÉL]
+
+Narrátor:
+
+Kapzsi Imre "egészségügyi okokból" visszavonult. A párt új elnöke: Kovács Béla. Te.
+
+A tükör előtt állsz, az elnöki irodában. Az ablakon túl Budapest fényei.
+
+Te (magadban):
+
+"4 millió forint adósság. Ezzel kezdődött. És most... most itt vagyok."
+
+Valaki kopog.
+
+Ismeretlen hang:
+
+"Elnök úr? Van itt egy fiatal srác. Kovács Péter a neve. Azt mondja, tartozik a banknak, és... nos, azt mondja, bármire hajlandó."
+
+
+
+╔═══════════════════════════════════════════════════════════════════════╗
+║                                                                        ║
+║      A játék véget ért. Vagy csak most kezdődött.                      ║
+║                                                                        ║
+║      VÉGSŐ STÁTUSZ:                                                    ║
+║      Rang: PÁRTELNÖK                                                   ║
+║      Összes XP: [számított érték]                                      ║
+║      Lebukásmérő: [számított érték]%                                   ║
+║      Összegyűjtött tárgyak: [lista]                                    ║
+║                                                                        ║
+╚═══════════════════════════════════════════════════════════════════════╝
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║  "A hatalom nem cél. A hatalom eszköz.                            ║
+║   A kérdés csak az: mire használod?"                               ║
+║                                                                    ║
+║   ...vagy ahogy nálunk mondják:                                    ║
+║                                                                    ║
+║   "A hatalom nem cél. De azért jó, ha van."                        ║
+║                                        - Kovács Béla, Pártelnök    ║
+╚═══════════════════════════════════════════════════════════════════╝
+Alternatív Végkifejletek
+🔴 LEBUKÁS VÉGZET (ha a lebukásmérő 100% fölé megy)
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                    💀 LEBUKÁS 💀                                   ║
+║                                                                    ║
+║   A sajtó mindent kiderített. Az ügyészség vádat emelt.           ║
+║   A párt "soha nem hallott" rólad.                                ║
+║                                                                    ║
+║   Utolsó üzenet a zárkából:                                        ║
+║   "Legalább a kölcsönt kifizettem..."                             ║
+╚═══════════════════════════════════════════════════════════════════╝
+🟡 SZÜRKE EMINENCIÁS VÉGZET (ha sosem támadtad Kapzsit)
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                    🎭 SZÜRKE EMINENCIÁS 🎭                         ║
+║                                                                    ║
+║   Kapzsi maradt az elnök. De te lettél a "tanácsadója".           ║
+║   Minden döntésed. Semmi felelősséged.                             ║
+║                                                                    ║
+║   "A legjobb pozíció a trón mögött van."                          ║
+╚═══════════════════════════════════════════════════════════════════╝
+Bónusz Idézetek (véletlenszerűen megjelenhetnek a játék során)
+
+
+"Aki kérdez, az gyanús." - Pártbölcsesség
+"A demokrácia túlértékelt." - Kapzsi Imre
+"Nem az a lényeg, hogy nyersz, hanem hogy a másik veszítsen." - Lakatos Ervin
+"A pénznek nincs szaga. De van széfje." - Dr. Péteri Katalin
+"30 év tapasztalat azt jelenti: 30 éve nem buktak le." - Molnár Gábor
+"A legjobb hazugság az, amit te magad is elhiszel." - Lipóti Dezső
+"Ha mindenki korrupt, akkor senki sem az." - Fityesz-logika
+Ha szeretnéd, bővíthetem bármelyik részt, írhatok több mellékszálat, vagy kidolgozhatom részletesebben a harc-mechanikát!
+
+
+
