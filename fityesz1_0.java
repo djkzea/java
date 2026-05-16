@@ -122,18 +122,18 @@ public class fityesz1_0 {
         }
 
 
-
         boolean boss1Verve = false;
 
         while(!boss1Verve){
 
-            int playerHp = 80;
-            int bossHp = 100;
+            int playerHp = 100;
+            int bossHp = 50;
 
             int elozo = 0;
             int ugyanaz = 0;
 
             System.out.println("\nBOSSFIGHT: Lakatos Ervin");
+            System.out.println("Ha 3-szor ugyanazt a képességet használod, Lakatos használni fogja a FELJELENTÉS képességét!");
 
             while(playerHp > 0 && bossHp > 0){
 
@@ -144,10 +144,7 @@ public class fityesz1_0 {
                 System.out.println("2 - Védekezés");
 
                 int player = sc.nextInt();
-
                 int boss = rnd.nextInt(2) + 1;
-
-
 
                 if(player == elozo){
                     ugyanaz++;
@@ -163,29 +160,36 @@ public class fityesz1_0 {
                     playerHp -= 30;
                 }
 
-                if(player == 1 && boss == 2){
-                    System.out.println("Lakatos kivédte.");
-                }
-                else if(player == 1 && boss == 1){
-                    System.out.println("Mindketten támadtatok!");
-                    playerHp -= 10;
-                    bossHp -= 10;
-                }
-                else if(player == 2 && boss == 1){
-                    System.out.println("Lakatos megütött!");
-                    playerHp -= 15;
+                if(player == 1){
+                    if(boss == 1){
+                        System.out.println("Mindketten támadtatok!");
+                        playerHp -= 10;
+                        bossHp -= 20;
+                    }
+                    else{
+                        System.out.println("Eltaláltad Lakatos Ervint!");
+                        bossHp -= 20;
+                    }
                 }
                 else{
-                    System.out.println("Mindketten védekeztetek.");
-                }
-
-                if(player == 1 && boss != 2){
-                    bossHp -= 20;
+                    if(boss == 1){
+                        System.out.println("Kivédted Lakatos támadását!");
+                    }
+                    else{
+                        System.out.println("Mindketten védekeztetek.");
+                    }
                 }
             }
 
-            if(playerHp <= 0){
 
+            if(bossHp <= 0){
+                boss1Verve = true;
+                xp += 50;
+                lakatosAktaja = true;
+
+                System.out.println("\nLegyőzted Lakatos Ervint!");
+            }
+            else{
                 System.out.println("\nVESZTETTÉL!");
                 System.out.println("1 - Újrapróbálás");
                 System.out.println("2 - Kilépés");
@@ -197,15 +201,7 @@ public class fityesz1_0 {
                     return;
                 }
             }
-            else{
-                boss1Verve = true;
-                xp += 50;
-                lakatosAktaja = true;
-
-                System.out.println("\nLegyőzted Lakatos Ervint!");
-            }
         }
-
 
         System.out.println("\nTárgyak:");
 
