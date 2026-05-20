@@ -397,7 +397,7 @@ public class fityesz1_0 {
         while(!boss2Verve){
 
             int playerHp = 100;
-            int bossHp = 150;
+            int bossHp = 80;
 
             int kor = 0;
 
@@ -416,7 +416,7 @@ public class fityesz1_0 {
                 int boss = rnd.nextInt(2) + 1;
 
                 if(kor % 2 == 0 && player != 1){
-                    System.out.println("MÉDIABOTRÁNY!");
+                    System.out.println("Péteri MÉDIABOTRÁNY képességet használt!");
                     playerHp -= 20;
                 }
 
