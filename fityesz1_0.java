@@ -29,6 +29,8 @@ public class fityesz1_0 {
         boolean elsoBoritek = false;
         boolean kisBoritek = false;
         boolean lakatosAktaja = false;
+        boolean offshoreKod = false;
+        boolean peteriDosszie = false;
 
 
         System.out.println("Prológus: A méylpont");
@@ -294,7 +296,161 @@ public class fityesz1_0 {
             System.out.println("- Lakatos Aktája");
         }
 
-        System.out.println("4. fejezet");
+
+
+
+        System.out.println("4. fejezet: Az Országos Választmány Árnyai");
+        System.out.println("idézet");
+        input.nextLine();
+        System.out.println("Helyszín: Elegáns irodaépület, 5. emelet, panorámás kilátás");
+        input.nextLine();
+        System.out.println("Feljutottál a Választmányba. A boríték most már vastagabb, az autó most már szolgálati. De a játékosok is veszélyesebbek.");
+        input.nextLine();
+        System.out.println("-Dr. Péteri Katalin-\n"+ nev+ " ! Hallottam magáról. Gyorsan emelkedik. Talán túl gyorsan. Tudja, mit mondanak a régi rókák?");
+        input.nextLine();
+        System.out.println("-Dr. Péteri Katalin-\nDe ne aggódjon. Én segíteni akarok. Van itt egy... projekt. EU-s pályázat. 800 millió forint. A papírmunka már megvan, csak... kell valaki, aki aláírja. Érti?");
+        input.nextLine();
+
+
+        System.out.println("Mit válaszolsz?");
+        System.out.println("\n1 - Mennyi az én részem?");
+        System.out.println("2 - Kinek a projektje ez valójában?");
+        System.out.println("3 - Ezt át kell gondolnom.");
+
+        int valasztas4 = sc.nextInt();
+
+        if(valasztas4 == 1){
+            xp += 30;
+            lebukas += 30;
+            offshoreKod = true;
+            System.out.println("MEGSZERZETT TÁRGY: OFFSHORE SZÁMLA BELÉPÉSI KÓD");
+            System.out.println("-Dr. Péteri Katalin-\n10%. De ez csak az első üzlet.");
+            input.nextLine();
+        }
+        else if(valasztas4 == 2){
+            xp += 15;
+            lebukas += 10;
+            System.out.println("-Dr. Péteri Katalin-\nKíváncsi kis ember... Ez tetszik. De a nevek nem fontosak.");
+            input.nextLine();
+        }
+        else{
+            xp += 5;
+            lebukas += 5;
+            System.out.println("-Dr. Péteri Katalin-\nGondolja át. De ne túl sokáig. Az idő pénz – szó szerint.");
+            input.nextLine();
+        }
+
+        raf.writeBytes("4. valasztas: " + valasztas4 + "\n");
+
+
+        System.out.println("5. fejezet: A Parlamenti Útvesztő");
+        System.out.println("idézet");
+        input.nextLine();
+        System.out.println("Helyszín: Parlament, folyosók és titkos szobák");
+        input.nextLine();
+        System.out.println("Most már parlamenti képviselő vagy. Van irodád, van asszisztensed, és van egy hosszú lista arról, hogy kinek mivel tartozol.");
+        input.nextLine();
+
+        System.out.println("-Molnár Gábor-\nGratulálok a mandátumhoz, Kovács! Most már az elit része vagy. Na, nem az igazi elité, ahhoz még messze vagy. De a kapuban állsz.");
+        input.nextLine();
+        System.out.println("*Molnár átad egy borítékot*");
+        input.nextLine();
+        System.out.println("-Molnár Gábor-\nEz a holnapi szavazás. Az EU-kritikus állásfoglalás. Te MELLETTE szavazol. Nem ELLENE, nem TARTÓZKODSZ. MELLETTE. Világos?");
+        input.nextLine();
+
+        System.out.println("Mit reagálsz?");
+        System.out.println("\n1 - Persze. Hol kell aláírni?");
+        System.out.println("2 - És ha esetleg a saját véleményem más?");
+        System.out.println("3 - Előbb elolvasom a javaslatot.");
+
+        int valasztas5 = sc.nextInt();
+
+        if(valasztas5 == 1){
+            xp += 20;
+            lebukas += 15;
+            System.out.println("-Molnár Gábor-\nLátom, gyorsan tanul. Ez jó.");
+            input.nextLine();
+        }
+        else if(valasztas5 == 2){
+            xp += 10;
+            lebukas += 20;
+            System.out.println("-Molnár Gábor-\n*nevet* Vélemény? VÉLEMÉNY?! Kovács, maga vicces ember.");
+            input.nextLine();
+        }
+        else{
+            xp += 5;
+            System.out.println("-Molnár Gábor-\nOlvasás? Hm. Furcsa szokás. De legyen.");
+            input.nextLine();
+        }
+
+        raf.writeBytes("5. valasztas: " + valasztas5 + "\n");
+
+
+        System.out.println("Megtudtad, hogy Dr. Péteri az előléptetésedért cserébe 50%-os részesedést akar minden jövőbeli üzletedből. Ideje tisztázni a viszonyokat.");
+
+
+        System.out.println("BOSSFIGHT: Dr. Péteri Katalin");
+        System.out.println("Ha nem támadsz, 2 körönként -20 HP sebzést fog okozni Péteri MÉDIABOTRÁNY képessége!");
+
+        boolean boss2Verve = false;
+
+        while(!boss2Verve){
+
+            int playerHp = 100;
+            int bossHp = 150;
+
+            int kor = 0;
+
+            while(playerHp > 0 && bossHp > 0){
+
+                kor++;
+
+                System.out.println("\nTe HP: " + playerHp);
+                System.out.println("Dr. Péteri HP: " + bossHp);
+
+                System.out.println("1 - Támadás");
+                System.out.println("2 - Védekezés");
+
+                int player = sc.nextInt();
+
+                int boss = rnd.nextInt(2) + 1;
+
+                if(kor % 2 == 0 && player != 1){
+                    System.out.println("MÉDIABOTRÁNY!");
+                    playerHp -= 20;
+                }
+
+                if(player == 1 && boss != 2){
+                    bossHp -= 25;
+                }
+
+                if(player == 2 && boss == 1){
+                    playerHp -= 20;
+                }
+            }
+
+            if(playerHp <= 0){
+
+                System.out.println("\nVESZTETTÉL!");
+                System.out.println("1 - Újra");
+                System.out.println("2 - Kilépés");
+
+                int ujra = sc.nextInt();
+
+                if(ujra == 2){
+                    return;
+                }
+            }
+            else{
+                boss2Verve = true;
+                xp += 80;
+                peteriDosszie = true;
+
+                System.out.println("\nLegyőzted Dr. Péterit!");
+            }
+        }
+
+        System.out.println("6.fejezet");
 
         raf.close();
         sc.close();
