@@ -31,6 +31,8 @@ public class fityesz1_0 {
         boolean lakatosAktaja = false;
         boolean offshoreKod = false;
         boolean peteriDosszie = false;
+        boolean fonokBizalma = false;
+        boolean parlamentiKulcs = false;
 
 
         System.out.println("Prológus: A méylpont");
@@ -132,7 +134,7 @@ public class fityesz1_0 {
         input.nextLine();
         System.out.println("Helyszín: Egy kerületi irodaépület, piros-fehér-zöld zászlókat látsz mindenhol.");
         input.nextLine();
-        System.out.println("*A teremben körülbelül 30 ember ül műanyag székeken. A falon gigantikus Kapzsi Imre-portré, alatta a felirat: \"CSAK FELFELÉ!\"*");
+        System.out.println("*A teremben körülbelül 30 ember ül műanyag székeken. A falon gigantikus Kapzs Imre-portré, alatta a felirat: \"CSAK FELFELÉ!\"*");
         input.nextLine();
 
         System.out.println("-Lakatos Ervin-\nNa, te vagy az új! " + nev+ ", ugye? Gyere, gyere! Pont jókor jöttél, ma van a havi... izé... KÖZÖSSÉGI TALÁLKOZÓ. Igen, úgy hívjuk.");
@@ -180,7 +182,7 @@ public class fityesz1_0 {
         System.out.println("Két hónap telt el. Szorgalmasan jártál a gyűlésekre, osztottad a szórólapokat, és megtanultad, mikor kell tapsolni. Most előléptettek: meghívást kaptál a Kongresszusra.");
         input.nextLine();
 
-        System.out.println("-Hangszóró-\nTisztelt Kongresszus! Kérjük, álljanak fel és köszöntsék a Nemzet Megmentőjét, a Haza Pajzsát, Kapzsi Imre Miniszterelnök Urat!");
+        System.out.println("-Hangszóró-\nTisztelt Kongresszus! Kérjük, álljanak fel és köszöntsék a Nemzet Megmentőjét, a Haza Pajzsát, Kapzs Imre Miniszterelnök Urat!");
         input.nextLine();
         System.out.println("*A tömeg felugrik. Te is.*");
         input.nextLine();
@@ -283,18 +285,6 @@ public class fityesz1_0 {
             }
         }
 
-        System.out.println("\nTárgyak:");
-
-        if(elsoBoritek){
-            System.out.println("- Első Boríték");
-        }
-        if(kisBoritek){
-            System.out.println("- Kis Boríték");
-        }
-
-        if(lakatosAktaja){
-            System.out.println("- Lakatos Aktája");
-        }
 
 
 
@@ -351,7 +341,7 @@ public class fityesz1_0 {
         System.out.println("Most már parlamenti képviselő vagy. Van irodád, van asszisztensed, és van egy hosszú lista arról, hogy kinek mivel tartozol.");
         input.nextLine();
 
-        System.out.println("-Molnár Gábor-\nGratulálok a mandátumhoz, Kovács! Most már az elit része vagy. Na, nem az igazi elité, ahhoz még messze vagy. De a kapuban állsz.");
+        System.out.println("-Molnár Gábor-\nGratulálok a mandátumhoz, " + nev + "! Most már az elit része vagy. Na, nem az igazi elité, ahhoz még messze vagy. De a kapuban állsz.");
         input.nextLine();
         System.out.println("*Molnár átad egy borítékot*");
         input.nextLine();
@@ -374,7 +364,7 @@ public class fityesz1_0 {
         else if(valasztas5 == 2){
             xp += 10;
             lebukas += 20;
-            System.out.println("-Molnár Gábor-\n*nevet* Vélemény? VÉLEMÉNY?! Kovács, maga vicces ember.");
+            System.out.println("-Molnár Gábor-\n*nevet* Vélemény? VÉLEMÉNY?! " + nev + ", maga vicces ember.");
             input.nextLine();
         }
         else{
@@ -420,14 +410,27 @@ public class fityesz1_0 {
                     playerHp -= 20;
                 }
 
+                if(player == 1 && boss == 2){
+                    System.out.println("Péteri kivédte.");
+                }
+                else if(player == 1 && boss == 1){
+                    System.out.println("Mindketten támadtatok!");
+                    playerHp -= 10;
+                    bossHp -= 10;
+                }
+                else if(player == 2 && boss == 1){
+                    System.out.println("Péteri megütött!");
+                    playerHp -= 20;
+                }
+                else{
+                    System.out.println("Mindketten védekeztetek.");
+                }
+
                 if(player == 1 && boss != 2){
                     bossHp -= 25;
                 }
-
-                if(player == 2 && boss == 1){
-                    playerHp -= 20;
-                }
             }
+
 
             if(playerHp <= 0){
 
@@ -450,7 +453,276 @@ public class fityesz1_0 {
             }
         }
 
-        System.out.println("6.fejezet");
+        System.out.println("6.fejezet: Az Országos Elnökség Kapujában");
+        System.out.println("idézet");
+        input.nextLine();
+        System.out.println("Helyszín: Elit vadászkastély, éjszaka, szivarfüst");
+        input.nextLine();
+        System.out.println("Meghívást kaptál a \"belső körbe\". Ahova nem mindenki juthat be. A szobában a párt legbefolyásosabb emberei ülnek bőrfotelekben.");
+        input.nextLine();
+        System.out.println("-Kapzs Imre-\nSzóval te vagy " + nev + ". Hallottam rólad. Gyorsan mászol. Ez jó. De tudod, mi a különbség a mászó és a csillag között?");
+        input.nextLine();
+        System.out.println("*Mindenki téged néz.*");
+        input.nextLine();
+        System.out.println("-Kapzs Imre-\nA mászó bármikor leeshet. A csillag... a csillag örökké ragyog. Na persze, amíg MI ragyogtatjuk.");
+        input.nextLine();
+        System.out.println("*Mindenki nevet.*");
+        input.nextLine();
+        System.out.println("-Kapzs Imre-\nFigyelj, " + nev + ". Van egy kis... probléma. Az ellenzék túl hangos lett. Szükségünk van valakire, aki... nos, aki megoldja. Kreatívan. Érted, ugye?");
+        input.nextLine();
+
+        System.out.println("Mit válaszolsz?");
+        System.out.println("\n1 - Bármit, Főnök. Csak mondja, mit.");
+        System.out.println("2 - Milyen jellegű 'megoldásra' gondol?");
+        System.out.println("3 - *Meghajolsz, de nem szólsz semmit*");
+
+        int valasztas6 = sc.nextInt();
+
+        if(valasztas6 == 1){
+            xp += 50;
+            lebukas += 40;
+            fonokBizalma = true;
+            System.out.println("MEGSZERZETT TÁRGY: FŐNÖK BIZALMA");
+            System.out.println("-Kapzs Imre-\nNA EZ AZ! Ilyen embereket akarok! Gyere ide, ülj mellém!");
+            input.nextLine();
+        }
+        else if(valasztas6 == 2){
+            xp += 25;
+            lebukas += 15;
+            System.out.println("-Kapzs Imre-\nÓvatos! Ez bölcs. De néha a bölcsesség lassít.");
+            input.nextLine();
+        }
+        else{
+            xp += 10;
+            lebukas += 5;
+            System.out.println("-Kapzs Imre-\nHm. A néma kutya sosem harap. De nem is véd.");
+            input.nextLine();
+        }
+
+        raf.writeBytes("6. valasztas: " + valasztas6 + "\n");
+
+        System.out.println("-Kapzs Imre-\nRendben. A részletekről később beszélhetünk.");
+        input.nextLine();
+
+        System.out.println("7.fejezet: Az Elnökség Trónján");
+        System.out.println("idézet");
+        input.nextLine();
+        System.out.println("Helyszín: A párt központja, az elnökségi terem");
+        input.nextLine();
+        System.out.println("*Most már az Országos Elnökség tagja vagy. A hatalom szaga érezhető – és kissé rothadt. De te már hozzászoktál.*");
+        input.nextLine();
+
+        System.out.println("-Kapzs Imre-\n" + nev + "! Gyere, sétáljunk. Van valami, amit csak neked mondok el.");
+        input.nextLine();
+        System.out.println("Kimentek a kertbe. Senki más nincs ott.");
+        input.nextLine();
+        System.out.println("-Kapzs Imre-\nTudod, én nem leszek örökké. Nem, nem, ne tiltakozz. Mindenki halandó. És nekem... nos, nekem szükségem van valakire, aki folytatja. Aki érti, hogyan működik ez az egész.");
+        input.nextLine();
+        System.out.println("*Kapzs Imre megáll és rádnéz*");
+        input.nextLine();
+        System.out.println("-Kapzs Imre-\nTe lehetnél az, " + nev + ". De előbb... előbb bizonyítanod kell. Van egy utolsó teszt.");
+        input.nextLine();
+
+
+        System.out.println("Mit válaszolsz?");
+        System.out.println("\n1 - Bármi lesz, kész vagyok rá.");
+        System.out.println("2 - Mi lenne ez a teszt?");
+        System.out.println("3 - Talán még nem vagyok készen...");
+
+        int valasztas7 = sc.nextInt();
+
+        if(valasztas7 == 1){
+            System.out.println("-Kapzs Imre-\nBármi? Bármi egy veszélyes szó, kisfiam. De legyen.");
+            input.nextLine();
+        }
+        else if(valasztas7 == 2){
+            System.out.println("-Kapzs Imre-\nAz egyetlen teszt, ami számít: le kell győznöd engem.");
+            input.nextLine();
+        }
+        else{
+            System.out.println("-Kapzs Imre-\nHm. Az önismeret erény. De a gyávaság nem.");
+            input.nextLine();
+        }
+
+        raf.writeBytes("7. valasztas: " + valasztas7 + "\n");
+
+        System.out.println("Helyszín: A párt titkos tanácsterme, éjfél");
+        input.nextLine();
+        System.out.println("*Ez az a pillanat, amire minden eddig történt felkészített. Kapzs tudja, hogy te vagy az egyetlen, aki fenyegetést jelenthet rá. És te is tudod: csak egyikőtök maradhat a csúcson.*");
+
+
+        System.out.println("BOSSFIGHT: Kapzs Imre");
+        System.out.println("KÜLÖNLEGES KÉPESSÉGEK:\nMédia Manipuláció - Minden 2. körben -15 HP neked\nHűséges Talpnyalók - 3 körönként +50 HP magának\nVégső Szónoklat - HP alatt 50: dupla sebzés");
+        input.nextLine();
+        System.out.println("Ha megvan a FŐNÖK BIZALMA tárgyad, Kapzs támadásai 30%-kal gyengébbek!");
+
+
+        boolean vegsoBoss = false;
+
+        while(!vegsoBoss){
+
+            int playerHp = 150;
+            int bossHp = 170;
+
+            int kor = 0;
+
+            while(playerHp > 0 && bossHp > 0){
+
+                kor++;
+
+                System.out.println("\nTe HP: " + playerHp);
+                System.out.println("Kapzs Imre HP: " + bossHp);
+
+                System.out.println("1 - Támadás");
+                System.out.println("2 - Védekezés");
+
+                int player = sc.nextInt();
+
+                int boss = rnd.nextInt(2) + 1;
+
+
+
+                if(kor % 2 == 0){
+
+                    int sebzes = 15;
+
+                    if(fonokBizalma){
+                        sebzes = 10;
+                    }
+
+                    playerHp -= sebzes;
+
+                    System.out.println("MÉDIA MANIPULÁCIÓ!");
+                }
+
+
+
+                if(kor % 3 == 0){
+                    bossHp += 50;
+
+                    if(bossHp > 300){
+                        bossHp = 300;
+                    }
+
+                    System.out.println("Kapzs gyógyult!");
+                }
+
+
+
+                if(player == 1 && boss != 2){
+                    System.out.println("Kapzs kivédte.");
+
+                    int sebzes = 35;
+
+                    if(bossHp <= 50){
+                        sebzes = 20;
+                    }
+
+                    bossHp -= sebzes;
+                }
+
+                else if(player == 2 && boss == 1){
+
+                    System.out.println("Kapzs megütött!");
+                    int sebzes = 30;
+
+                    if(bossHp <= 50){
+                        sebzes = 60;
+                    }
+
+                    playerHp -= sebzes;
+                }
+
+                else if(player == 1 && boss == 1){
+                    System.out.println("Mindketten támadtatok!");
+                    playerHp -= 10;
+                    bossHp -= 10;
+                }
+                else{
+                    System.out.println("Mindketten védekeztetek.");
+                }
+
+
+            }
+
+            if(playerHp <= 0){
+
+                System.out.println("\n1 - Újra");
+                System.out.println("2 - Kilépés");
+
+                int ujra = sc.nextInt();
+
+                if(ujra == 2){
+                    return;
+                }
+            }
+            else{
+                vegsoBoss = true;
+                xp += 120;
+                parlamentiKulcs = true;
+            }
+        }
+
+        System.out.println("*Kapzs Imre \"egészségügyi okokból\" visszavonult. A párt új elnöke: " + nev + ". Te.*");
+        input.nextLine();
+        System.out.println("A tükör előtt állsz, az elnöki irodában. Az ablakon túl Budapest fényei.");
+        input.nextLine();
+        System.out.println("-Te-\n4 millió forint adósság. Ezzel kezdődött. És most... most itt vagyok.");
+        input.nextLine();
+        System.out.println("*Valaki kopog*");
+        input.nextLine();
+        System.out.println("-Ismeretlen hang-\nElnök úr? Van itt egy fiatal srác. Kovács Péter a neve. Azt mondja, tartozik a banknak, és... nos, bármire hajlandó.");
+        input.nextLine();
+
+
+
+
+
+        if(lebukas >= 100){
+
+            System.out.println("\nLEBUKTÁL!");
+            System.out.println("A sajtó mindent kiderített.");
+        }
+        else{
+
+            System.out.println("\n================================");
+            System.out.println(" GRATULÁLOK!");
+            System.out.println(" TE LETTÉL A PÁRTELNÖK!");
+            System.out.println("================================");
+
+            System.out.println("\nVégső XP: " + xp);
+            System.out.println("Lebukásmérő: " + lebukas + "%");
+
+            System.out.println("\nTárgyak:");
+
+            if(elsoBoritek){
+                System.out.println("- Első Boríték");
+            }
+
+            if(kisBoritek){
+                System.out.println("- Kis Boríték");
+            }
+
+            if(lakatosAktaja){
+                System.out.println("- Lakatos Aktája");
+            }
+
+            if(offshoreKod){
+                System.out.println("- Offshore Kód");
+            }
+
+            if(peteriDosszie){
+                System.out.println("- Péteri Dosszié");
+            }
+
+            if(fonokBizalma){
+                System.out.println("- Főnök Bizalma");
+            }
+
+            if(parlamentiKulcs){
+                System.out.println("- Parlamenti Többség Kulcsa");
+            }
+        }
 
         raf.close();
         sc.close();
