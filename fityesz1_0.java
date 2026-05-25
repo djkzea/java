@@ -47,7 +47,7 @@ public class fityesz1_0 {
 
 
         System.out.println("Prológus: A méylpont");
-        System.out.println("idézet");
+        System.out.println("Aki a múltat nem ismeri, az a jövőt sem érti.");
         sc.nextLine();
 
         System.out.println("Add meg a neved: ");
@@ -64,7 +64,7 @@ public class fityesz1_0 {
         sc.nextLine();
 
         System.out.println("1. Fejezet: A Toborzás");
-        System.out.println("idézet");
+        System.out.println("\"Az országért mindenkinek tenni kell, nem csak beszélni róla.\"");
         sc.nextLine();
         System.out.println("Helyszín: egy eldugott kávézó. A falon egy Kossuth portrét és egy rejtélyes grafikát látsz.");
         sc.nextLine();
@@ -149,7 +149,7 @@ public class fityesz1_0 {
         raf.writeBytes("2. valasztas: " + valasztas2 + "\n");
 
         System.out.println("2. fejezet: Az első gyűlés");
-        System.out.println("idézet");
+        System.out.println("\"Aki nincs ellenünk, az velünk van.\"");
         sc.nextLine();
         System.out.println("Helyszín: Egy kerületi irodaépület, piros-fehér-zöld zászlókat látsz mindenhol.");
         sc.nextLine();
@@ -198,7 +198,7 @@ public class fityesz1_0 {
 
 
         System.out.println("3. fejezet: A Kongresszusi Próba");
-        System.out.println("idézet");
+        System.out.println("\"Ha nincs semmi gond, csinálunk valamit, hogy legyen.\"");
         sc.nextLine();
         System.out.println("Helyszín: Hatalmas rendezvénycsarnok, ezrek a nézőtéren");
         sc.nextLine();
@@ -217,7 +217,7 @@ public class fityesz1_0 {
         sc.nextLine();
         System.out.println("*Mennydörgő taps. Te is tapsolsz.*");
 
-        System.out.println("idézet");
+        System.out.println("\"A stratégia nélkülözhetetlen minden sikeres döntéshez.\"");
         sc.nextLine();
         System.out.println("*Lakatos megtudta, hogy te is pályázol a választmányi helyre. Nem nézi jó szemmel a versenyt. Kihív egy \"baráti vitára\" – ami valójában nyilvános megalázási kísérlet.*");
 
@@ -313,7 +313,7 @@ public class fityesz1_0 {
 
 
         System.out.println("4. fejezet: Az Országos Választmány Árnyai");
-        System.out.println("idézet");
+        System.out.println("\"A diplomácia nem arról szól, hogy mindig igent mondunk.\"");
         sc.nextLine();
         System.out.println("Helyszín: Elegáns irodaépület, 5. emelet, panorámás kilátás");
         sc.nextLine();
@@ -361,7 +361,7 @@ public class fityesz1_0 {
 
 
         System.out.println("5. fejezet: A Parlamenti Útvesztő");
-        System.out.println("idézet");
+        System.out.println("\"Egyetlen forint közpénzt sem hagyunk kárba veszni.\"");
         sc.nextLine();
         System.out.println("Helyszín: Parlament, folyosók és titkos szobák");
         sc.nextLine();
@@ -485,7 +485,7 @@ public class fityesz1_0 {
         }
 
         System.out.println("6.fejezet: Az Országos Elnökség Kapujában");
-        System.out.println("idézet");
+        System.out.println("\"A demokratikus jogrend nem ad felmentést a felelősség alól.\"");
         sc.nextLine();
         System.out.println("Helyszín: Elit vadászkastély, éjszaka, szivarfüst");
         sc.nextLine();
@@ -540,7 +540,7 @@ public class fityesz1_0 {
         sc.nextLine();
 
         System.out.println("7.fejezet: Az Elnökség Trónján");
-        System.out.println("idézet");
+        System.out.println("\"A törvény mindenkire egyformán vonatkozik.\"");
         sc.nextLine();
         System.out.println("Helyszín: A párt központja, az elnökségi terem");
         sc.nextLine();
