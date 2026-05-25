@@ -4,6 +4,18 @@ import java.io.RandomAccessFile;
 import java.io.IOException;
 
 public class fityesz1_0 {
+    public static boolean lebukasEllenorzes(int lebukas){
+
+        if(lebukas >= 100){
+
+            System.out.println(" LEBUKTÁL!\nA sajtó mindent kiderített.");
+            System.out.println(" ");
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
     public static void main(String[] args) throws IOException {
 
@@ -12,14 +24,13 @@ public class fityesz1_0 {
 
         RandomAccessFile raf = new RandomAccessFile("valasztasok.txt", "rw");
 
-        Scanner input = new Scanner(System.in);
 
         System.out.println("Üdvözöllek a játékban!");
         System.out.println("Ez egy szöveg alapú kaland játék, amiben egy izgalmas történeten járhatsz végig. Emellett a döntésed mind befolyásolják a cselekmény kimenetelét. Bölcsen válassz, hogy jó úton járj.");
         System.out.println("A sztori során a kimeneteleket a CLI alján találod majd és 1-2-3-4 számok közül kell választanod a neked legjobban tetsző folytatást, kimenetelt a jelenleg előállt helyzetnek.");
         System.out.println("--------------------------------------");
         System.out.println("Nyomj Enter-t a folytatáshoz...");
-        input.nextLine();
+        sc.nextLine();
 
 
         int xp = 0;
@@ -37,10 +48,10 @@ public class fityesz1_0 {
 
         System.out.println("Prológus: A méylpont");
         System.out.println("idézet");
-        input.nextLine();
+        sc.nextLine();
 
         System.out.println("Add meg a neved: ");
-        String nev = input.nextLine();
+        String nev = sc.nextLine();
         System.out.println("Te " + nev + " vagy");
         System.out.println("Volt középiskolai tanár vagy. A havi 180 ezres fizetésből nem jött ki a matek. Van 3 kiflid, 380 Forintod és 4 millió forint adósságod.");
         System.out.println("A bank már keres.");
@@ -48,17 +59,17 @@ public class fityesz1_0 {
 
 
         System.out.println("*Csörög a telefonod*");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("-Ismeretlen hang-" + "\n" + nev +" ? Hallottam a helyzetéről. Van egy ajánlatom, amit nem fog tudni visszautasítani. Találkozzunk a Dohány utcai kávézóban, holnap délben. Kérdezzen Lipóti úr után.");
-        input.nextLine();
+        sc.nextLine();
 
         System.out.println("1. Fejezet: A Toborzás");
         System.out.println("idézet");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("Helyszín: egy eldugott kávézó. A falon egy Kossuth portrét és egy rejtélyes grafikát látsz.");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("-Ismeretlen-\n" + nev + " ? Lipóti Dezső vagyok, kérem, foglaljon helyet! Kávét? Pálinkát? Mindkettőt? Látom a szemén, hogy az utóbbi kell.");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("-Lipóti Dezső-\n");
         System.out.println("Szóval tanár volt. Nemes hivatás, nemde? De tudja, mi a nemesebb? A szolgálat. A NEMZET szolgálata. És mellékesen... nos, a nemzet szolgálata jól fizet.");
 
@@ -68,24 +79,28 @@ public class fityesz1_0 {
         System.out.println("3 - Mi lenne a dolgom?");
 
         int valasztas1 = sc.nextInt();
+        sc.nextLine();
 
         if(valasztas1 == 1){
             xp += 15;
             lebukas += 10;
             System.out.println("-Lipóti Dezső-\nŐszinte ember! Ezt szeretem. Ilyen emberekre van szükségünk.");
-            input.nextLine();
+            sc.nextLine();
         }
         else if(valasztas1 == 2){
             xp += 10;
             lebukas += 5;
             System.out.println("-Lipóti Dezső-\nSzép szavak! Megtanulja még a többit is.");
-            input.nextLine();
+            sc.nextLine();
         }
         else{
             xp += 5;
             System.out.println("-Lipóti Dezső-\nÓvatos! Ez jó. De a részletekbe majd később megyünk bele.");
-            input.nextLine();
+            sc.nextLine();
 
+        }
+        if(lebukasEllenorzes(lebukas)){
+            return;
         }
 
         raf.seek(raf.length());
@@ -93,10 +108,10 @@ public class fityesz1_0 {
 
         System.out.println("-Lipóti Dezső-\nA Fityesz nem csak egy párt, " + nev +". Család. És a családban mindenkiről gondoskodunk. Nézze csak...");
 
-        input.nextLine();
+        sc.nextLine();
 
         System.out.println("*Lipóti kitesz az asztalra egy borítékot. Kinyitod és 500 ezer magyar forintot látsz benne. Készpénzben.*");
-        input.nextLine();
+        sc.nextLine();
 
         System.out.println("-Lipóti Dezső-\nEz csak az eleje. Előleg a jövőbeni... hűségéért. Ahogy a Miniszterelnök Úr mondta egyszer...");
 
@@ -107,42 +122,46 @@ public class fityesz1_0 {
         System.out.println("3 - Nem nyúlsz hozzá");
 
         int valasztas2 = sc.nextInt();
-
+        sc.nextLine();
         if(valasztas2 == 1){
             xp += 20;
             lebukas += 15;
             elsoBoritek = true;
             System.out.println("MEGSZERZETT TÁRGY: ELSŐ BORÍTÉK\n*Lipóti elmosolyodik*");
-            input.nextLine();
+            sc.nextLine();
         }
         else if(valasztas2 == 2){
             xp += 10;
             lebukas += 5;
             System.out.println("-Lipóti Dezső-\nFeltétel? Csak annyi, hogy holnap megjelensz ezen a címen");
-            input.nextLine();
+            sc.nextLine();
         }
         else{
             lebukas -= 10;
             System.out.println("-Lipóti Dezső-\nÓ, tehát alkudni akar! Maga tényleg politikusnak született!");
-            input.nextLine();
+            sc.nextLine();
+        }
+        if(lebukasEllenorzes(lebukas)){
+            return;
         }
 
+        raf.seek(raf.length());
         raf.writeBytes("2. valasztas: " + valasztas2 + "\n");
 
         System.out.println("2. fejezet: Az első gyűlés");
         System.out.println("idézet");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("Helyszín: Egy kerületi irodaépület, piros-fehér-zöld zászlókat látsz mindenhol.");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("*A teremben körülbelül 30 ember ül műanyag székeken. A falon gigantikus Kapzs Imre-portré, alatta a felirat: \"CSAK FELFELÉ!\"*");
-        input.nextLine();
+        sc.nextLine();
 
         System.out.println("-Lakatos Ervin-\nNa, te vagy az új! " + nev+ ", ugye? Gyere, gyere! Pont jókor jöttél, ma van a havi... izé... KÖZÖSSÉGI TALÁLKOZÓ. Igen, úgy hívjuk.");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("*A teremben az emberek borítékokat osztogatnak egymás között.*");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("-Lakatos Ervin-\nFigyelj, itt egyszerűek a szabályok. Egy: amit látsz, nem láttad. Kettő: amit hallasz, nem hallottad. Három: amit kapsz, az jutalom a kemény munkáért. Négy: minden a Főnökért. Világos?");
-        input.nextLine();
+        sc.nextLine();
 
         System.out.println("Hogyan reagálsz?");
         System.out.println("\n1 - Teljesen világos. Hol az én borítékom?");
@@ -150,52 +169,56 @@ public class fityesz1_0 {
         System.out.println("3 - Csendben maradsz és figyelsz.");
 
         int valasztas3 = sc.nextInt();
-
+        sc.nextLine();
         if(valasztas3 == 1){
             xp += 25;
             lebukas += 20;
             kisBoritek = true;
             System.out.println("MEGSZERZETT TÁRGY: KIS BORÍTÉK");
             System.out.println("-Lakatos Ervin-\nNa EZ a hozzáállás! Fiúk, szeretni fogjátok ezt az embert!");
-            input.nextLine();
+            sc.nextLine();
         }
         else if(valasztas3 == 2){
             xp += 10;
             lebukas += 5;
             System.out.println("-Lakatos Ervin-\nLebukás? Haha! Mi vagyunk a hatalom, kisfiam!");
-            input.nextLine();
+            sc.nextLine();
         }
         else{
             xp += 5;
             System.out.println("-Lakatos Ervin-\n*Lakatos néz egy darabig* \nA néma gyereknek az anyja sem érti a szavát...");
-            input.nextLine();
+            sc.nextLine();
+        }
+        if(lebukasEllenorzes(lebukas)){
+            return;
         }
 
+        raf.seek(raf.length());
         raf.writeBytes("3. valasztas: " + valasztas3 + "\n");
 
 
         System.out.println("3. fejezet: A Kongresszusi Próba");
         System.out.println("idézet");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("Helyszín: Hatalmas rendezvénycsarnok, ezrek a nézőtéren");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("Két hónap telt el. Szorgalmasan jártál a gyűlésekre, osztottad a szórólapokat, és megtanultad, mikor kell tapsolni. Most előléptettek: meghívást kaptál a Kongresszusra.");
-        input.nextLine();
+        sc.nextLine();
 
         System.out.println("-Hangszóró-\nTisztelt Kongresszus! Kérjük, álljanak fel és köszöntsék a Nemzet Megmentőjét, a Haza Pajzsát, Kapzs Imre Miniszterelnök Urat!");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("*A tömeg felugrik. Te is.*");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("-Kapzs Imre-\nMagyarok! Testvéreim! Mi vagyunk az utolsó bástya a... a... nos, mindenki ellen, aki nem mi vagyunk!");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("*A tömeg nevet. Te is.*");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("-Kapzs Imre-\nTudják, mit mondott nekem ma reggel a szakácsunk? Azt mondta: 'Miniszterelnök Úr, maga a legnagyobb!' És én mit válaszoltam? Azt mondtam: 'TUDOM!'");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("*Mennydörgő taps. Te is tapsolsz.*");
 
         System.out.println("idézet");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("*Lakatos megtudta, hogy te is pályázol a választmányi helyre. Nem nézi jó szemmel a versenyt. Kihív egy \"baráti vitára\" – ami valójában nyilvános megalázási kísérlet.*");
 
         if(xp >= 50){
@@ -291,15 +314,15 @@ public class fityesz1_0 {
 
         System.out.println("4. fejezet: Az Országos Választmány Árnyai");
         System.out.println("idézet");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("Helyszín: Elegáns irodaépület, 5. emelet, panorámás kilátás");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("Feljutottál a Választmányba. A boríték most már vastagabb, az autó most már szolgálati. De a játékosok is veszélyesebbek.");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("-Dr. Péteri Katalin-\n"+ nev+ " ! Hallottam magáról. Gyorsan emelkedik. Talán túl gyorsan. Tudja, mit mondanak a régi rókák?");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("-Dr. Péteri Katalin-\nDe ne aggódjon. Én segíteni akarok. Van itt egy... projekt. EU-s pályázat. 800 millió forint. A papírmunka már megvan, csak... kell valaki, aki aláírja. Érti?");
-        input.nextLine();
+        sc.nextLine();
 
 
         System.out.println("Mit válaszolsz?");
@@ -308,45 +331,49 @@ public class fityesz1_0 {
         System.out.println("3 - Ezt át kell gondolnom.");
 
         int valasztas4 = sc.nextInt();
-
+        sc.nextLine();
         if(valasztas4 == 1){
             xp += 30;
             lebukas += 30;
             offshoreKod = true;
             System.out.println("MEGSZERZETT TÁRGY: OFFSHORE SZÁMLA BELÉPÉSI KÓD");
             System.out.println("-Dr. Péteri Katalin-\n10%. De ez csak az első üzlet.");
-            input.nextLine();
+            sc.nextLine();
         }
         else if(valasztas4 == 2){
             xp += 15;
             lebukas += 10;
             System.out.println("-Dr. Péteri Katalin-\nKíváncsi kis ember... Ez tetszik. De a nevek nem fontosak.");
-            input.nextLine();
+            sc.nextLine();
         }
         else{
             xp += 5;
             lebukas += 5;
             System.out.println("-Dr. Péteri Katalin-\nGondolja át. De ne túl sokáig. Az idő pénz – szó szerint.");
-            input.nextLine();
+            sc.nextLine();
+        }
+        if(lebukasEllenorzes(lebukas)){
+            return;
         }
 
+        raf.seek(raf.length());
         raf.writeBytes("4. valasztas: " + valasztas4 + "\n");
 
 
         System.out.println("5. fejezet: A Parlamenti Útvesztő");
         System.out.println("idézet");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("Helyszín: Parlament, folyosók és titkos szobák");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("Most már parlamenti képviselő vagy. Van irodád, van asszisztensed, és van egy hosszú lista arról, hogy kinek mivel tartozol.");
-        input.nextLine();
+        sc.nextLine();
 
         System.out.println("-Molnár Gábor-\nGratulálok a mandátumhoz, " + nev + "! Most már az elit része vagy. Na, nem az igazi elité, ahhoz még messze vagy. De a kapuban állsz.");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("*Molnár átad egy borítékot*");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("-Molnár Gábor-\nEz a holnapi szavazás. Az EU-kritikus állásfoglalás. Te MELLETTE szavazol. Nem ELLENE, nem TARTÓZKODSZ. MELLETTE. Világos?");
-        input.nextLine();
+        sc.nextLine();
 
         System.out.println("Mit reagálsz?");
         System.out.println("\n1 - Persze. Hol kell aláírni?");
@@ -354,25 +381,29 @@ public class fityesz1_0 {
         System.out.println("3 - Előbb elolvasom a javaslatot.");
 
         int valasztas5 = sc.nextInt();
-
+        sc.nextLine();
         if(valasztas5 == 1){
             xp += 20;
             lebukas += 15;
             System.out.println("-Molnár Gábor-\nLátom, gyorsan tanul. Ez jó.");
-            input.nextLine();
+            sc.nextLine();
         }
         else if(valasztas5 == 2){
             xp += 10;
             lebukas += 20;
             System.out.println("-Molnár Gábor-\n*nevet* Vélemény? VÉLEMÉNY?! " + nev + ", maga vicces ember.");
-            input.nextLine();
+            sc.nextLine();
         }
         else{
             xp += 5;
             System.out.println("-Molnár Gábor-\nOlvasás? Hm. Furcsa szokás. De legyen.");
-            input.nextLine();
+            sc.nextLine();
         }
 
+        if(lebukasEllenorzes(lebukas)){
+            return;
+        }
+        raf.seek(raf.length());
         raf.writeBytes("5. valasztas: " + valasztas5 + "\n");
 
 
@@ -455,21 +486,21 @@ public class fityesz1_0 {
 
         System.out.println("6.fejezet: Az Országos Elnökség Kapujában");
         System.out.println("idézet");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("Helyszín: Elit vadászkastély, éjszaka, szivarfüst");
-        input.nextLine();
-        System.out.println("Meghívást kaptál a \"belső körbe\". Ahova nem mindenki juthat be. A szobában a párt legbefolyásosabb emberei ülnek bőrfotelekben.");
-        input.nextLine();
-        System.out.println("-Kapzs Imre-\nSzóval te vagy " + nev + ". Hallottam rólad. Gyorsan mászol. Ez jó. De tudod, mi a különbség a mászó és a csillag között?");
-        input.nextLine();
+        sc.nextLine();
+        System.out.println("Meghívást kaptál a \"belső körbe\". Ahova nem mindenki juthat be. qnA szobában a párt legbefolyásosabb emberei ülnek bőrfotelekben.");
+        sc.nextLine();
+        System.out.println("-Kapzs Imre-\nSzóval te vagy " + nev + ". Hallottam rólad. Gyorsan mászol. Ez jó. \nDe tudod, mi a különbség a mászó és a csillag között?");
+        sc.nextLine();
         System.out.println("*Mindenki téged néz.*");
-        input.nextLine();
-        System.out.println("-Kapzs Imre-\nA mászó bármikor leeshet. A csillag... a csillag örökké ragyog. Na persze, amíg MI ragyogtatjuk.");
-        input.nextLine();
+        sc.nextLine();
+        System.out.println("-Kapzs Imre-\nA mászó bármikor leeshet. A csillag... a csillag örökké ragyog. qnNa persze, amíg MI ragyogtatjuk.");
+        sc.nextLine();
         System.out.println("*Mindenki nevet.*");
-        input.nextLine();
-        System.out.println("-Kapzs Imre-\nFigyelj, " + nev + ". Van egy kis... probléma. Az ellenzék túl hangos lett. Szükségünk van valakire, aki... nos, aki megoldja. Kreatívan. Érted, ugye?");
-        input.nextLine();
+        sc.nextLine();
+        System.out.println("-Kapzs Imre-\nFigyelj, " + nev + ". Van egy kis... probléma. \nAz ellenzék túl hangos lett. Szükségünk van valakire, aki... nos, aki megoldja. Kreatívan. Érted, ugye?");
+        sc.nextLine();
 
         System.out.println("Mit válaszolsz?");
         System.out.println("\n1 - Bármit, Főnök. Csak mondja, mit.");
@@ -477,51 +508,55 @@ public class fityesz1_0 {
         System.out.println("3 - *Meghajolsz, de nem szólsz semmit*");
 
         int valasztas6 = sc.nextInt();
-
+        sc.nextLine();
         if(valasztas6 == 1){
             xp += 50;
             lebukas += 40;
             fonokBizalma = true;
             System.out.println("MEGSZERZETT TÁRGY: FŐNÖK BIZALMA");
             System.out.println("-Kapzs Imre-\nNA EZ AZ! Ilyen embereket akarok! Gyere ide, ülj mellém!");
-            input.nextLine();
+            sc.nextLine();
         }
         else if(valasztas6 == 2){
             xp += 25;
             lebukas += 15;
             System.out.println("-Kapzs Imre-\nÓvatos! Ez bölcs. De néha a bölcsesség lassít.");
-            input.nextLine();
+            sc.nextLine();
         }
         else{
             xp += 10;
             lebukas += 5;
             System.out.println("-Kapzs Imre-\nHm. A néma kutya sosem harap. De nem is véd.");
-            input.nextLine();
+            sc.nextLine();
+        }
+        if(lebukasEllenorzes(lebukas)){
+            return;
         }
 
+        raf.seek(raf.length());
         raf.writeBytes("6. valasztas: " + valasztas6 + "\n");
 
         System.out.println("-Kapzs Imre-\nRendben. A részletekről később beszélhetünk.");
-        input.nextLine();
+        sc.nextLine();
 
         System.out.println("7.fejezet: Az Elnökség Trónján");
         System.out.println("idézet");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("Helyszín: A párt központja, az elnökségi terem");
-        input.nextLine();
-        System.out.println("*Most már az Országos Elnökség tagja vagy. A hatalom szaga érezhető – és kissé rothadt. De te már hozzászoktál.*");
-        input.nextLine();
+        sc.nextLine();
+        System.out.println("*Most már az Országos Elnökség tagja vagy. A hatalom szaga érezhető – és kissé rothadt. \nDe te már hozzászoktál.*");
+        sc.nextLine();
 
         System.out.println("-Kapzs Imre-\n" + nev + "! Gyere, sétáljunk. Van valami, amit csak neked mondok el.");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("Kimentek a kertbe. Senki más nincs ott.");
-        input.nextLine();
-        System.out.println("-Kapzs Imre-\nTudod, én nem leszek örökké. Nem, nem, ne tiltakozz. Mindenki halandó. És nekem... nos, nekem szükségem van valakire, aki folytatja. Aki érti, hogyan működik ez az egész.");
-        input.nextLine();
+        sc.nextLine();
+        System.out.println("-Kapzs Imre-\nTudod, én nem leszek örökké. Nem, nem, ne tiltakozz. \nMindenki halandó. És nekem... nos, nekem szükségem van valakire, aki folytatja. \nAki érti, hogyan működik ez az egész.");
+        sc.nextLine();
         System.out.println("*Kapzs Imre megáll és rádnéz*");
-        input.nextLine();
-        System.out.println("-Kapzs Imre-\nTe lehetnél az, " + nev + ". De előbb... előbb bizonyítanod kell. Van egy utolsó teszt.");
-        input.nextLine();
+        sc.nextLine();
+        System.out.println("-Kapzs Imre-\nTe lehetnél az, " + nev + ". De előbb... előbb bizonyítanod kell. \nVan egy utolsó teszt.");
+        sc.nextLine();
 
 
         System.out.println("Mit válaszolsz?");
@@ -530,30 +565,34 @@ public class fityesz1_0 {
         System.out.println("3 - Talán még nem vagyok készen...");
 
         int valasztas7 = sc.nextInt();
-
+        sc.nextLine();
         if(valasztas7 == 1){
             System.out.println("-Kapzs Imre-\nBármi? Bármi egy veszélyes szó, kisfiam. De legyen.");
-            input.nextLine();
+            sc.nextLine();
         }
         else if(valasztas7 == 2){
             System.out.println("-Kapzs Imre-\nAz egyetlen teszt, ami számít: le kell győznöd engem.");
-            input.nextLine();
+            sc.nextLine();
         }
         else{
             System.out.println("-Kapzs Imre-\nHm. Az önismeret erény. De a gyávaság nem.");
-            input.nextLine();
+            sc.nextLine();
         }
 
+        if(lebukasEllenorzes(lebukas)){
+            return;
+        }
+        raf.seek(raf.length());
         raf.writeBytes("7. valasztas: " + valasztas7 + "\n");
 
         System.out.println("Helyszín: A párt titkos tanácsterme, éjfél");
-        input.nextLine();
-        System.out.println("*Ez az a pillanat, amire minden eddig történt felkészített. Kapzs tudja, hogy te vagy az egyetlen, aki fenyegetést jelenthet rá. És te is tudod: csak egyikőtök maradhat a csúcson.*");
+        sc.nextLine();
+        System.out.println("*Ez az a pillanat, amire minden eddig történt felkészített. \nKapzs tudja, hogy te vagy az egyetlen, aki fenyegetést jelenthet rá. \nÉs te is tudod: csak egyikőtök maradhat a csúcson.*");
 
 
         System.out.println("BOSSFIGHT: Kapzs Imre");
         System.out.println("KÜLÖNLEGES KÉPESSÉGEK:\nMédia Manipuláció - Minden 2. körben -15 HP neked\nHűséges Talpnyalók - 3 körönként +50 HP magának\nVégső Szónoklat - HP alatt 50: dupla sebzés");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("Ha megvan a FŐNÖK BIZALMA tárgyad, Kapzs támadásai 30%-kal gyengébbek!");
 
 
@@ -609,7 +648,7 @@ public class fityesz1_0 {
 
 
 
-                if(player == 1 && boss != 2){
+                if(player == 1 && boss == 2){
                     System.out.println("Kapzs kivédte.");
 
                     int sebzes = 35;
@@ -664,31 +703,23 @@ public class fityesz1_0 {
         }
 
         System.out.println("*Kapzs Imre \"egészségügyi okokból\" visszavonult. A párt új elnöke: " + nev + ". Te.*");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("A tükör előtt állsz, az elnöki irodában. Az ablakon túl Budapest fényei.");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("-Te-\n4 millió forint adósság. Ezzel kezdődött. És most... most itt vagyok.");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("*Valaki kopog*");
-        input.nextLine();
+        sc.nextLine();
         System.out.println("-Ismeretlen hang-\nElnök úr? Van itt egy fiatal srác. Kovács Péter a neve. Azt mondja, tartozik a banknak, és... nos, bármire hajlandó.");
-        input.nextLine();
+        sc.nextLine();
 
 
 
 
 
-        if(lebukas >= 100){
+        if(lebukas < 100){
 
-            System.out.println("\nLEBUKTÁL!");
-            System.out.println("A sajtó mindent kiderített.");
-        }
-        else{
-
-            System.out.println("\n================================");
-            System.out.println(" GRATULÁLOK!");
-            System.out.println(" TE LETTÉL A PÁRTELNÖK!");
-            System.out.println("================================");
+            System.out.println(" GRATULÁLUNK!\nTE LETTÉL A PÁRTELNÖK!");
 
             System.out.println("\nVégső XP: " + xp);
             System.out.println("Lebukásmérő: " + lebukas + "%");
