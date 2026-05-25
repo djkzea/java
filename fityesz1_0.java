@@ -156,7 +156,7 @@ public class fityesz1_0 {
         System.out.println("*A teremben körülbelül 30 ember ül műanyag székeken. A falon gigantikus Kapzs Imre-portré, alatta a felirat: \"CSAK FELFELÉ!\"*");
         sc.nextLine();
 
-        System.out.println("-Lakatos Ervin-\nNa, te vagy az új! " + nev+ ", ugye? Gyere, gyere! Pont jókor jöttél, ma van a havi... izé... KÖZÖSSÉGI TALÁLKOZÓ. qnIgen, úgy hívjuk.");
+        System.out.println("-Lakatos Ervin-\nNa, te vagy az új! " + nev+ ", ugye? Gyere, gyere! Pont jókor jöttél, ma van a havi... izé... KÖZÖSSÉGI TALÁLKOZÓ. \nIgen, úgy hívjuk.");
         sc.nextLine();
         System.out.println("*A teremben az emberek borítékokat osztogatnak egymás között.*");
         sc.nextLine();
@@ -495,7 +495,7 @@ public class fityesz1_0 {
         sc.nextLine();
         System.out.println("*Mindenki téged néz.*");
         sc.nextLine();
-        System.out.println("-Kapzs Imre-\nA mászó bármikor leeshet. A csillag... a csillag örökké ragyog. qnNa persze, amíg MI ragyogtatjuk.");
+        System.out.println("-Kapzs Imre-\nA mászó bármikor leeshet. A csillag... a csillag örökké ragyog. \nNa persze, amíg MI ragyogtatjuk.");
         sc.nextLine();
         System.out.println("*Mindenki nevet.*");
         sc.nextLine();
