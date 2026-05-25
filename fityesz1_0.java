@@ -26,8 +26,8 @@ public class fityesz1_0 {
 
 
         System.out.println("Üdvözöllek a játékban!");
-        System.out.println("Ez egy szöveg alapú kaland játék, amiben egy izgalmas történeten járhatsz végig. Emellett a döntésed mind befolyásolják a cselekmény kimenetelét. Bölcsen válassz, hogy jó úton járj.");
-        System.out.println("A sztori során a kimeneteleket a CLI alján találod majd és 1-2-3-4 számok közül kell választanod a neked legjobban tetsző folytatást, kimenetelt a jelenleg előállt helyzetnek.");
+        System.out.println("Ez egy szöveg alapú kaland játék, amiben egy izgalmas történeten járhatsz végig. \nEmellett a döntésed mind befolyásolják a cselekmény kimenetelét. Bölcsen válassz, hogy jó úton járj.");
+        System.out.println("A sztori során a kimeneteleket a CLI alján találod majd és 1-2-3 számok közül kell választanod a neked legjobban tetsző folytatást, \nkimenetelt a jelenleg előállt helyzetnek.");
         System.out.println("--------------------------------------");
         System.out.println("Nyomj Enter-t a folytatáshoz...");
         sc.nextLine();
@@ -53,14 +53,14 @@ public class fityesz1_0 {
         System.out.println("Add meg a neved: ");
         String nev = sc.nextLine();
         System.out.println("Te " + nev + " vagy");
-        System.out.println("Volt középiskolai tanár vagy. A havi 180 ezres fizetésből nem jött ki a matek. Van 3 kiflid, 380 Forintod és 4 millió forint adósságod.");
+        System.out.println("Volt középiskolai tanár vagy. \nA havi 180 ezres fizetésből nem jött ki a matek. Van 3 kiflid, 380 Forintod és 4 millió forint adósságod.");
         System.out.println("A bank már keres.");
         System.out.println("Ezért politikusnak állsz.\n");
 
 
         System.out.println("*Csörög a telefonod*");
         sc.nextLine();
-        System.out.println("-Ismeretlen hang-" + "\n" + nev +" ? Hallottam a helyzetéről. Van egy ajánlatom, amit nem fog tudni visszautasítani. Találkozzunk a Dohány utcai kávézóban, holnap délben. Kérdezzen Lipóti úr után.");
+        System.out.println("-Ismeretlen hang-" + "\n" + nev +" ? Hallottam a helyzetéről. Van egy ajánlatom, amit nem fog tudni visszautasítani. \nTalálkozzunk a Dohány utcai kávézóban, holnap délben. Kérdezzen Lipóti úr után.");
         sc.nextLine();
 
         System.out.println("1. Fejezet: A Toborzás");
@@ -68,10 +68,10 @@ public class fityesz1_0 {
         sc.nextLine();
         System.out.println("Helyszín: egy eldugott kávézó. A falon egy Kossuth portrét és egy rejtélyes grafikát látsz.");
         sc.nextLine();
-        System.out.println("-Ismeretlen-\n" + nev + " ? Lipóti Dezső vagyok, kérem, foglaljon helyet! Kávét? Pálinkát? Mindkettőt? Látom a szemén, hogy az utóbbi kell.");
+        System.out.println("-Ismeretlen-\n" + nev + " ? Lipóti Dezső vagyok, kérem, foglaljon helyet! Kávét? Pálinkát? Mindkettőt? \nLátom a szemén, hogy az utóbbi kell.");
         sc.nextLine();
         System.out.println("-Lipóti Dezső-\n");
-        System.out.println("Szóval tanár volt. Nemes hivatás, nemde? De tudja, mi a nemesebb? A szolgálat. A NEMZET szolgálata. És mellékesen... nos, a nemzet szolgálata jól fizet.");
+        System.out.println("Szóval tanár volt. Nemes hivatás, nemde? De tudja, mi a nemesebb? A szolgálat. A NEMZET szolgálata. \nÉs mellékesen... nos, a nemzet szolgálata jól fizet.");
 
         System.out.println("Mit válaszolsz?");
         System.out.println("\n1 - Engem csak a pénz érdekel");
@@ -156,11 +156,11 @@ public class fityesz1_0 {
         System.out.println("*A teremben körülbelül 30 ember ül műanyag székeken. A falon gigantikus Kapzs Imre-portré, alatta a felirat: \"CSAK FELFELÉ!\"*");
         sc.nextLine();
 
-        System.out.println("-Lakatos Ervin-\nNa, te vagy az új! " + nev+ ", ugye? Gyere, gyere! Pont jókor jöttél, ma van a havi... izé... KÖZÖSSÉGI TALÁLKOZÓ. Igen, úgy hívjuk.");
+        System.out.println("-Lakatos Ervin-\nNa, te vagy az új! " + nev+ ", ugye? Gyere, gyere! Pont jókor jöttél, ma van a havi... izé... KÖZÖSSÉGI TALÁLKOZÓ. qnIgen, úgy hívjuk.");
         sc.nextLine();
         System.out.println("*A teremben az emberek borítékokat osztogatnak egymás között.*");
         sc.nextLine();
-        System.out.println("-Lakatos Ervin-\nFigyelj, itt egyszerűek a szabályok. Egy: amit látsz, nem láttad. Kettő: amit hallasz, nem hallottad. Három: amit kapsz, az jutalom a kemény munkáért. Négy: minden a Főnökért. Világos?");
+        System.out.println("-Lakatos Ervin-\nFigyelj, itt egyszerűek a szabályok. Egy: amit látsz, nem láttad. \nKettő: amit hallasz, nem hallottad. Három: amit kapsz, az jutalom a kemény munkáért. Négy: minden a Főnökért. Világos?");
         sc.nextLine();
 
         System.out.println("Hogyan reagálsz?");
@@ -202,7 +202,7 @@ public class fityesz1_0 {
         sc.nextLine();
         System.out.println("Helyszín: Hatalmas rendezvénycsarnok, ezrek a nézőtéren");
         sc.nextLine();
-        System.out.println("Két hónap telt el. Szorgalmasan jártál a gyűlésekre, osztottad a szórólapokat, és megtanultad, mikor kell tapsolni. Most előléptettek: meghívást kaptál a Kongresszusra.");
+        System.out.println("Két hónap telt el. Szorgalmasan jártál a gyűlésekre, osztottad a szórólapokat, és megtanultad, mikor kell tapsolni. \nMost előléptettek: meghívást kaptál a Kongresszusra.");
         sc.nextLine();
 
         System.out.println("-Hangszóró-\nTisztelt Kongresszus! Kérjük, álljanak fel és köszöntsék a Nemzet Megmentőjét, a Haza Pajzsát, Kapzs Imre Miniszterelnök Urat!");
@@ -213,13 +213,13 @@ public class fityesz1_0 {
         sc.nextLine();
         System.out.println("*A tömeg nevet. Te is.*");
         sc.nextLine();
-        System.out.println("-Kapzs Imre-\nTudják, mit mondott nekem ma reggel a szakácsunk? Azt mondta: 'Miniszterelnök Úr, maga a legnagyobb!' És én mit válaszoltam? Azt mondtam: 'TUDOM!'");
+        System.out.println("-Kapzs Imre-\nTudják, mit mondott nekem ma reggel a szakácsunk? Azt mondta: 'Miniszterelnök Úr, maga a legnagyobb!' \nÉs én mit válaszoltam? Azt mondtam: 'TUDOM!'");
         sc.nextLine();
         System.out.println("*Mennydörgő taps. Te is tapsolsz.*");
 
         System.out.println("\"A stratégia nélkülözhetetlen minden sikeres döntéshez.\"");
         sc.nextLine();
-        System.out.println("*Lakatos megtudta, hogy te is pályázol a választmányi helyre. Nem nézi jó szemmel a versenyt. Kihív egy \"baráti vitára\" – ami valójában nyilvános megalázási kísérlet.*");
+        System.out.println("*Lakatos megtudta, hogy te is pályázol a választmányi helyre. Nem nézi jó szemmel a versenyt. \nKihív egy \"baráti vitára\" – ami valójában nyilvános megalázási kísérlet.*");
 
         if(xp >= 50){
             szint = 2;
@@ -317,11 +317,11 @@ public class fityesz1_0 {
         sc.nextLine();
         System.out.println("Helyszín: Elegáns irodaépület, 5. emelet, panorámás kilátás");
         sc.nextLine();
-        System.out.println("Feljutottál a Választmányba. A boríték most már vastagabb, az autó most már szolgálati. De a játékosok is veszélyesebbek.");
+        System.out.println("Feljutottál a Választmányba. A boríték most már vastagabb, az autó most már szolgálati. \nDe a játékosok is veszélyesebbek.");
         sc.nextLine();
         System.out.println("-Dr. Péteri Katalin-\n"+ nev+ " ! Hallottam magáról. Gyorsan emelkedik. Talán túl gyorsan. Tudja, mit mondanak a régi rókák?");
         sc.nextLine();
-        System.out.println("-Dr. Péteri Katalin-\nDe ne aggódjon. Én segíteni akarok. Van itt egy... projekt. EU-s pályázat. 800 millió forint. A papírmunka már megvan, csak... kell valaki, aki aláírja. Érti?");
+        System.out.println("-Dr. Péteri Katalin-\nDe ne aggódjon. Én segíteni akarok. Van itt egy... projekt. EU-s pályázat. \n800 millió forint. A papírmunka már megvan, csak... kell valaki, aki aláírja. Érti?");
         sc.nextLine();
 
 
@@ -368,11 +368,11 @@ public class fityesz1_0 {
         System.out.println("Most már parlamenti képviselő vagy. Van irodád, van asszisztensed, és van egy hosszú lista arról, hogy kinek mivel tartozol.");
         sc.nextLine();
 
-        System.out.println("-Molnár Gábor-\nGratulálok a mandátumhoz, " + nev + "! Most már az elit része vagy. Na, nem az igazi elité, ahhoz még messze vagy. De a kapuban állsz.");
+        System.out.println("-Molnár Gábor-\nGratulálok a mandátumhoz, " + nev + "! Most már az elit része vagy. \nNa, nem az igazi elité, ahhoz még messze vagy. De a kapuban állsz.");
         sc.nextLine();
         System.out.println("*Molnár átad egy borítékot*");
         sc.nextLine();
-        System.out.println("-Molnár Gábor-\nEz a holnapi szavazás. Az EU-kritikus állásfoglalás. Te MELLETTE szavazol. Nem ELLENE, nem TARTÓZKODSZ. MELLETTE. Világos?");
+        System.out.println("-Molnár Gábor-\nEz a holnapi szavazás. Az EU-kritikus állásfoglalás. Te MELLETTE szavazol. Nem ELLENE, nem TARTÓZKODSZ. \nMELLETTE. Világos?");
         sc.nextLine();
 
         System.out.println("Mit reagálsz?");
@@ -407,7 +407,7 @@ public class fityesz1_0 {
         raf.writeBytes("5. valasztas: " + valasztas5 + "\n");
 
 
-        System.out.println("Megtudtad, hogy Dr. Péteri az előléptetésedért cserébe 50%-os részesedést akar minden jövőbeli üzletedből. Ideje tisztázni a viszonyokat.");
+        System.out.println("Megtudtad, hogy Dr. Péteri az előléptetésedért cserébe 50%-os részesedést akar minden jövőbeli üzletedből. \nIdeje tisztázni a viszonyokat.");
 
 
         System.out.println("BOSSFIGHT: Dr. Péteri Katalin");
@@ -489,7 +489,7 @@ public class fityesz1_0 {
         sc.nextLine();
         System.out.println("Helyszín: Elit vadászkastély, éjszaka, szivarfüst");
         sc.nextLine();
-        System.out.println("Meghívást kaptál a \"belső körbe\". Ahova nem mindenki juthat be. qnA szobában a párt legbefolyásosabb emberei ülnek bőrfotelekben.");
+        System.out.println("Meghívást kaptál a \"belső körbe\". Ahova nem mindenki juthat be. \nA szobában a párt legbefolyásosabb emberei ülnek bőrfotelekben.");
         sc.nextLine();
         System.out.println("-Kapzs Imre-\nSzóval te vagy " + nev + ". Hallottam rólad. Gyorsan mászol. Ez jó. \nDe tudod, mi a különbség a mászó és a csillag között?");
         sc.nextLine();
