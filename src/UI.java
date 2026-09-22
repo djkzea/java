@@ -12,10 +12,23 @@ public class UI {
     private static final String WHITE  = "\033[97m";
     private static final String CREAM  = "\033[37m";
 
+    /** Kozepre igazitas adott szelessegben / centre within a given width. */
+    private static String kozep(String szoveg, int szelesseg) {
+        int hiany = Math.max(0, szelesseg - szoveg.length());
+        int bal = hiany / 2;
+        return " ".repeat(bal) + szoveg + " ".repeat(hiany - bal);
+    }
+
+    /** Balra igazitas adott szelessegben / pad right to a given width. */
+    private static String balra(String szoveg, int szelesseg) {
+        return szoveg + " ".repeat(Math.max(0, szelesseg - szoveg.length()));
+    }
+
     public static void cim() {
+        String szoveg = "✦  " + Lang.t("ui.title") + "  ✦";
         System.out.println();
         System.out.println(GOLD + "════════════════════════════════════════" + RESET);
-        System.out.println(BOLD + GOLD + "       ✦  FITYESZ KRÓNIKA  ✦" + RESET);
+        System.out.println(BOLD + GOLD + kozep(szoveg, 40) + RESET);
         System.out.println(GOLD + "════════════════════════════════════════" + RESET);
         System.out.println();
     }
@@ -23,7 +36,7 @@ public class UI {
     public static void fejezet(int szam, String cim, String idezet) {
         System.out.println();
         System.out.println(GRAY + "────────────────────────────────────────" + RESET);
-        System.out.println(BOLD + GOLD + "  ▸ " + szam + ". FEJEZET: " + cim.toUpperCase() + " ◂" + RESET);
+        System.out.println(BOLD + GOLD + "  ▸ " + szam + ". " + Lang.t("ui.chapter") + ": " + cim.toUpperCase() + " ◂" + RESET);
         if (idezet != null && !idezet.isEmpty()) {
             System.out.println(GRAY + ITALIC + "  \"" + idezet + "\"" + RESET);
         }
@@ -52,7 +65,8 @@ public class UI {
             String sor = "  " + BOLD + YELLOW + (i + 1) + ". " + RESET + YELLOW + opciok[i];
             System.out.println(CREAM + "│" + RESET + sor + RESET);
         }
-        System.out.println(CREAM + "└─── Válassz (" + 1 + "-" + opciok.length + "): " + "─".repeat(Math.max(1, szelesseg - 14 - String.valueOf(opciok.length).length())) + "┘" + RESET);
+        String also = "└─── " + Lang.t("ui.choose") + " (1-" + opciok.length + "): ";
+        System.out.println(CREAM + also + "─".repeat(Math.max(1, szelesseg + 2 - also.length())) + "┘" + RESET);
         System.out.print(GOLD + "> " + RESET);
     }
 
@@ -72,7 +86,7 @@ public class UI {
 
     public static void boss(String nev) {
         System.out.println();
-        System.out.println(RED + BOLD + "  ⚔  BOSSFIGHT: " + nev.toUpperCase() + "  ⚔" + RESET);
+        System.out.println(RED + BOLD + "  ⚔  " + Lang.t("ui.bossfight") + ": " + nev.toUpperCase() + "  ⚔" + RESET);
         System.out.println(GRAY + "────────────────────────────────────────" + RESET);
     }
 
@@ -89,27 +103,32 @@ public class UI {
     public static void statusz(int xp, int lebukas, int szint) {
         System.out.println();
         System.out.println(GRAY + "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄" + RESET);
-        System.out.println("  " + GOLD + "✦ XP: " + xp + RESET
-                + "   " + RED + "⚠ LEBUKÁS: " + lebukas + "%" + RESET
-                + "   " + GRAY + "◈ Szint: " + szint + RESET);
+        System.out.println("  " + GOLD + "✦ " + Lang.t("ui.xp") + ": " + xp + RESET
+                + "   " + RED + "⚠ " + Lang.t("ui.exposure") + ": " + lebukas + "%" + RESET
+                + "   " + GRAY + "◈ " + Lang.t("ui.level") + ": " + szint + RESET);
         System.out.println(GRAY + "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄" + RESET);
         System.out.println();
     }
 
     public static void targy(String nev) {
+        String tartalom = "  ★ " + Lang.t("ui.item") + ": " + nev;
+        int belso = Math.max(34, tartalom.length() + 2);
         System.out.println();
-        System.out.println(GOLD + "  ┌──────────────────────────────────┐" + RESET);
-        System.out.println(GOLD + "  │  ★ MEGSZERZETT TÁRGY: " + nev + RESET);
-        System.out.println(GOLD + "  └──────────────────────────────────┘" + RESET);
+        System.out.println(GOLD + "  ┌" + "─".repeat(belso) + "┐" + RESET);
+        System.out.println(GOLD + "  │" + balra(tartalom, belso) + "│" + RESET);
+        System.out.println(GOLD + "  └" + "─".repeat(belso) + "┘" + RESET);
         System.out.println();
     }
 
     public static void szintlepes(String rang) {
+        String cim  = Lang.t("ui.levelup");
+        String also = "  " + Lang.t("ui.newrank") + rang;
+        int belso = Math.max(34, Math.max(cim.length(), also.length()) + 2);
         System.out.println();
-        System.out.println(BOLD + YELLOW + "  ╔══════════════════════════════════╗" + RESET);
-        System.out.println(BOLD + YELLOW + "  ║       ✦  SZINTLÉPÉS!  ✦         ║" + RESET);
-        System.out.println(BOLD + YELLOW + "  ║  Új rang: " + rang + RESET);
-        System.out.println(BOLD + YELLOW + "  ╚══════════════════════════════════╝" + RESET);
+        System.out.println(BOLD + YELLOW + "  ╔" + "═".repeat(belso) + "╗" + RESET);
+        System.out.println(BOLD + YELLOW + "  ║" + kozep(cim, belso) + "║" + RESET);
+        System.out.println(BOLD + YELLOW + "  ║" + balra(also, belso) + "║" + RESET);
+        System.out.println(BOLD + YELLOW + "  ╚" + "═".repeat(belso) + "╝" + RESET);
         System.out.println();
     }
 
@@ -119,44 +138,46 @@ public class UI {
                                 boolean fonokBizalma, boolean parlamentiKulcs) {
         System.out.println();
         System.out.println(GOLD + "════════════════════════════════════════" + RESET);
-        System.out.println(BOLD + GOLD + "   ✦  GRATULÁLUNK, " + nev.toUpperCase() + "!  ✦" + RESET);
-        System.out.println(BOLD + GOLD + "      TE LETTÉL A PÁRTELNÖK!" + RESET);
+        System.out.println(BOLD + GOLD + kozep(Lang.t("ui.congrats", nev.toUpperCase()), 40) + RESET);
+        System.out.println(BOLD + GOLD + kozep(Lang.t("ui.president"), 40) + RESET);
         System.out.println(GOLD + "════════════════════════════════════════" + RESET);
         System.out.println();
-        System.out.println(GOLD + "  Végső XP:       " + WHITE + xp + RESET);
-        System.out.println(GOLD + "  Lebukásmérő:    " + WHITE + lebukas + "%" + RESET);
+        System.out.println(GOLD + "  " + balra(Lang.t("ui.finalxp"), 16) + WHITE + xp + RESET);
+        System.out.println(GOLD + "  " + balra(Lang.t("ui.exposuremeter"), 16) + WHITE + lebukas + "%" + RESET);
         System.out.println();
-        System.out.println(GOLD + "  Megszerzett tárgyak:" + RESET);
-        if (boritek1)       System.out.println(YELLOW + "    - Első Boríték" + RESET);
-        if (boritekKis)     System.out.println(YELLOW + "    - Kis Boríték" + RESET);
-        if (lakatosAktaja)  System.out.println(YELLOW + "    - Lakatos Aktája" + RESET);
-        if (offshoreKod)    System.out.println(YELLOW + "    - Offshore Kód" + RESET);
-        if (peteriDosszie)  System.out.println(YELLOW + "    - Péteri Dosszié" + RESET);
-        if (fonokBizalma)   System.out.println(YELLOW + "    - Főnök Bizalma" + RESET);
-        if (parlamentiKulcs) System.out.println(YELLOW + "    - Parlamenti Többség Kulcsa" + RESET);
+        System.out.println(GOLD + "  " + Lang.t("ui.itemsheader") + RESET);
+        if (boritek1)        System.out.println(YELLOW + "    - " + Lang.t("item.envelope1") + RESET);
+        if (boritekKis)      System.out.println(YELLOW + "    - " + Lang.t("item.envelopeSmall") + RESET);
+        if (lakatosAktaja)   System.out.println(YELLOW + "    - " + Lang.t("item.lakatosFile") + RESET);
+        if (offshoreKod)     System.out.println(YELLOW + "    - " + Lang.t("item.offshore") + RESET);
+        if (peteriDosszie)   System.out.println(YELLOW + "    - " + Lang.t("item.peteriDossier") + RESET);
+        if (fonokBizalma)    System.out.println(YELLOW + "    - " + Lang.t("item.bossTrust") + RESET);
+        if (parlamentiKulcs) System.out.println(YELLOW + "    - " + Lang.t("item.parliamentKey") + RESET);
         System.out.println();
         System.out.println(GOLD + "════════════════════════════════════════" + RESET);
     }
 
     public static void vereseg() {
+        String szoveg = Lang.t("ui.defeat");
+        int belso = Math.max(34, szoveg.length() + 2);
         System.out.println();
-        System.out.println(RED + BOLD + "  ╔══════════════════════════════════╗" + RESET);
-        System.out.println(RED + BOLD + "  ║         ✖  VESZTETTÉL!  ✖       ║" + RESET);
-        System.out.println(RED + BOLD + "  ╚══════════════════════════════════╝" + RESET);
+        System.out.println(RED + BOLD + "  ╔" + "═".repeat(belso) + "╗" + RESET);
+        System.out.println(RED + BOLD + "  ║" + kozep(szoveg, belso) + "║" + RESET);
+        System.out.println(RED + BOLD + "  ╚" + "═".repeat(belso) + "╝" + RESET);
         System.out.println();
     }
 
     public static void lebukas() {
         System.out.println();
         System.out.println(RED + BOLD + "════════════════════════════════════════" + RESET);
-        System.out.println(RED + BOLD + "   ✖  LEBUKTÁL!" + RESET);
-        System.out.println(RED + "   A sajtó mindent kiderített." + RESET);
+        System.out.println(RED + BOLD + "   " + Lang.t("ui.exposed") + RESET);
+        System.out.println(RED + "   " + Lang.t("ui.pressfound") + RESET);
         System.out.println(RED + BOLD + "════════════════════════════════════════" + RESET);
         System.out.println();
     }
 
     public static void enter() {
-        System.out.println(GRAY + "  [ Nyomj Enter-t a folytatáshoz... ]" + RESET);
+        System.out.println(GRAY + "  " + Lang.t("ui.enter") + RESET);
     }
 
     public static void elvalaszto() {

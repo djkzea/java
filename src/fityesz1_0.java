@@ -13,17 +13,22 @@ public class fityesz1_0 {
     }
 
     public static void main(String[] args) throws IOException {
-
         Scanner sc = new Scanner(System.in);
+        Lang.select(sc);
+        jatek(sc);
+    }
+
+    public static void jatek(Scanner sc) throws IOException {
+
         Random rnd = new Random();
 
         RandomAccessFile raf = new RandomAccessFile("valasztasok.txt", "rw");
 
         UI.cim();
-        System.out.println("Üdvözöllek a játékban!");
-        System.out.println("Ez egy szöveg alapú kaland játék, amiben egy izgalmas történeten járhatsz végig.");
-        System.out.println("A döntéseid mind befolyásolják a cselekmény kimenetelét. Bölcsen válassz!");
-        System.out.println("A sztori során 1-3 számok közül kell választanod a folytatást.");
+        System.out.println(Lang.t("intro.welcome"));
+        System.out.println(Lang.t("intro.1"));
+        System.out.println(Lang.t("intro.2"));
+        System.out.println(Lang.t("intro.3"));
         UI.elvalaszto();
         UI.enter();
         sc.nextLine();
@@ -42,46 +47,40 @@ public class fityesz1_0 {
         boolean parlamentiKulcs = false;
 
 
-        System.out.println("Prológus: A mélyPont");
-        System.out.println("Aki a múltat nem ismeri, az a jövőt sem érti.");
+        System.out.println(Lang.t("pro.title"));
+        System.out.println(Lang.t("pro.quote"));
         UI.enter();
         sc.nextLine();
 
-        System.out.println("Add meg a neved: ");
+        System.out.println(Lang.t("pro.namePrompt"));
         String nev = sc.nextLine();
-        System.out.println("Te " + nev + " vagy.");
-        System.out.println("Volt középiskolai tanár vagy.");
-        System.out.println("A havi 180 ezres fizetésből nem jött ki a matek.");
-        System.out.println("Van 3 kiflid, 380 Forintod és 4 millió forint adósságod.");
-        System.out.println("A bank már keres.");
-        System.out.println("Ezért politikusnak állsz.");
+        System.out.println(Lang.t("pro.youAre", nev));
+        System.out.println(Lang.t("pro.teacher"));
+        System.out.println(Lang.t("pro.salary"));
+        System.out.println(Lang.t("pro.assets"));
+        System.out.println(Lang.t("pro.bank"));
+        System.out.println(Lang.t("pro.politician"));
         UI.enter();
         sc.nextLine();
 
-        UI.narracio("Csörög a telefonod");
-        UI.parbeszed("Ismeretlen hang",
-                nev + "? Hallottam a helyzetéről. Van egy ajánlatom, amit nem fog tudni visszautasítani.\n" +
-                "Találkozzunk a Dohány utcai kávézóban, holnap délben. Kérdezzen Lipóti úr után.");
+        UI.narracio(Lang.t("pro.phone"));
+        UI.parbeszed(Lang.t("npc.unknown"), Lang.t("pro.call", nev));
         UI.enter();
         sc.nextLine();
 
-        UI.fejezet(1, "A Toborzás", "Az országért mindenkinek tenni kell, nem csak beszélni róla.");
-        System.out.println("Helyszín: egy eldugott kávézó. A falon egy Kossuth portrét és egy rejtélyes grafikát látsz.");
+        UI.fejezet(1, Lang.t("ch1.title"), Lang.t("ch1.quote"));
+        System.out.println(Lang.t("ch1.place"));
         UI.enter();
         sc.nextLine();
-        UI.parbeszed("Lipóti Dezső",
-                nev + "? Lipóti Dezső vagyok, kérem, foglaljon helyet! Kávét? Pálinkát? Mindkettőt?\n" +
-                "Látom a szemén, hogy az utóbbi kell.");
+        UI.parbeszed(Lang.t("npc.lipoti"), Lang.t("ch1.lipoti1", nev));
         UI.enter();
         sc.nextLine();
-        UI.parbeszed("Lipóti Dezső",
-                "Szóval tanár volt. Nemes hivatás, nemde? De tudja, mi a nemesebb? A szolgálat. A NEMZET szolgálata.\n" +
-                "És mellékesen... nos, a nemzet szolgálata jól fizet.");
+        UI.parbeszed(Lang.t("npc.lipoti"), Lang.t("ch1.lipoti2"));
 
-        UI.menu("Mit válaszolsz?",
-                "Engem csak a pénz érdekel",
-                "A nemzet szolgálata érdekel",
-                "Mi lenne a dolgom?");
+        UI.menu(Lang.t("ch1.q1"),
+                Lang.t("ch1.q1.opt1"),
+                Lang.t("ch1.q1.opt2"),
+                Lang.t("ch1.q1.opt3"));
 
         int valasztas1 = sc.nextInt();
         sc.nextLine();
@@ -89,16 +88,16 @@ public class fityesz1_0 {
         if(valasztas1 == 1){
             xp += 15;
             lebukas += 10;
-            UI.parbeszed("Lipóti Dezső", "Őszinte ember! Ezt szeretem. Ilyen emberekre van szükségünk.");
+            UI.parbeszed(Lang.t("npc.lipoti"), Lang.t("ch1.q1.ans1"));
         }
         else if(valasztas1 == 2){
             xp += 10;
             lebukas += 5;
-            UI.parbeszed("Lipóti Dezső", "Szép szavak! Megtanulja még a többit is.");
+            UI.parbeszed(Lang.t("npc.lipoti"), Lang.t("ch1.q1.ans2"));
         }
         else{
             xp += 5;
-            UI.parbeszed("Lipóti Dezső", "Óvatos! Ez jó. De a részletekbe majd később megyünk bele.");
+            UI.parbeszed(Lang.t("npc.lipoti"), Lang.t("ch1.q1.ans3"));
         }
         UI.enter();
         sc.nextLine();
@@ -108,21 +107,20 @@ public class fityesz1_0 {
         raf.seek(raf.length());
         raf.writeBytes("1. fejezet valasztas: " + valasztas1 + "\n");
 
-        UI.parbeszed("Lipóti Dezső",
-                "A Fityesz nem csak egy párt, " + nev + ". Család. És a családban mindenkiről gondoskodunk. Nézze csak...");
+        UI.parbeszed(Lang.t("npc.lipoti"), Lang.t("ch1.lipoti3", nev));
         UI.enter();
         sc.nextLine();
 
-        UI.narracio("Lipóti kitesz az asztalra egy borítékot. Kinyitod és 500 ezer magyar forintot látsz benne. Készpénzben.");
+        UI.narracio(Lang.t("ch1.envelope"));
         UI.enter();
         sc.nextLine();
 
-        UI.parbeszed("Lipóti Dezső", "Ez csak az eleje. Előleg a jövőbeni... hűségéért. Ahogy a Miniszterelnök Úr mondta egyszer...");
+        UI.parbeszed(Lang.t("npc.lipoti"), Lang.t("ch1.lipoti4"));
 
-        UI.menu("Elfogadod a pénzt?",
-                "Elveszed és bólogatsz",
-                "Elveszed, de kérdezel: \"Mi a feltétel?\"",
-                "Nem nyúlsz hozzá");
+        UI.menu(Lang.t("ch1.q2"),
+                Lang.t("ch1.q2.opt1"),
+                Lang.t("ch1.q2.opt2"),
+                Lang.t("ch1.q2.opt3"));
 
         int valasztas2 = sc.nextInt();
         sc.nextLine();
@@ -130,17 +128,17 @@ public class fityesz1_0 {
             xp += 20;
             lebukas += 15;
             elsoBoritek = true;
-            UI.targy("ELSŐ BORÍTÉK");
-            UI.narracio("Lipóti elmosolyodik");
+            UI.targy(Lang.t("item.envelope1"));
+            UI.narracio(Lang.t("ch1.q2.ans1"));
         }
         else if(valasztas2 == 2){
             xp += 10;
             lebukas += 5;
-            UI.parbeszed("Lipóti Dezső", "Feltétel? Csak annyi, hogy holnap megjelensz ezen a címen.");
+            UI.parbeszed(Lang.t("npc.lipoti"), Lang.t("ch1.q2.ans2"));
         }
         else{
             lebukas -= 10;
-            UI.parbeszed("Lipóti Dezső", "Ó, tehát alkudni akar! Maga tényleg politikusnak született!");
+            UI.parbeszed(Lang.t("npc.lipoti"), Lang.t("ch1.q2.ans3"));
         }
         UI.enter();
         sc.nextLine();
@@ -150,32 +148,28 @@ public class fityesz1_0 {
         raf.seek(raf.length());
         raf.writeBytes("2. valasztas: " + valasztas2 + "\n");
 
-        UI.fejezet(2, "Az első gyűlés", "Aki nincs ellenünk, az velünk van.");
-        System.out.println("Helyszín: Egy kerületi irodaépület, piros-fehér-zöld zászlókat látsz mindenhol.");
+        UI.fejezet(2, Lang.t("ch2.title"), Lang.t("ch2.quote"));
+        System.out.println(Lang.t("ch2.place"));
         UI.enter();
         sc.nextLine();
-        UI.narracio("A teremben körülbelül 30 ember ül műanyag székeken. A falon gigantikus Kapzs Imre-portré, alatta a felirat: \"CSAK FELFELÉ!\"");
-        UI.enter();
-        sc.nextLine();
-
-        UI.parbeszed("Lakatos Ervin",
-                "Na, te vagy az új! " + nev + ", ugye? Gyere, gyere! Pont jókor jöttél, ma van a havi... izé... KÖZÖSSÉGI TALÁLKOZÓ.\nIgen, úgy hívjük.");
-        UI.enter();
-        sc.nextLine();
-        UI.narracio("A teremben az emberek borítékokat osztogatnak egymás között.");
-        UI.enter();
-        sc.nextLine();
-        UI.parbeszed("Lakatos Ervin",
-                "Figyelj, itt egyszerűek a szabályok. Egy: amit látsz, nem láttad.\n" +
-                "Kettő: amit hallasz, nem hallottad. Három: amit kapsz, az jutalom a kemény munkáért.\n" +
-                "Négy: minden a Főnökért. Világos?");
+        UI.narracio(Lang.t("ch2.narr1"));
         UI.enter();
         sc.nextLine();
 
-        UI.menu("Hogyan reagálsz?",
-                "Teljesen világos. Hol az én borítékom?",
-                "És ha valaki lebukik?",
-                "Csendben maradsz és figyelsz.");
+        UI.parbeszed(Lang.t("npc.lakatos"), Lang.t("ch2.lakatos1", nev));
+        UI.enter();
+        sc.nextLine();
+        UI.narracio(Lang.t("ch2.narr2"));
+        UI.enter();
+        sc.nextLine();
+        UI.parbeszed(Lang.t("npc.lakatos"), Lang.t("ch2.lakatos2"));
+        UI.enter();
+        sc.nextLine();
+
+        UI.menu(Lang.t("ch2.q"),
+                Lang.t("ch2.q.opt1"),
+                Lang.t("ch2.q.opt2"),
+                Lang.t("ch2.q.opt3"));
 
         int valasztas3 = sc.nextInt();
         sc.nextLine();
@@ -183,17 +177,17 @@ public class fityesz1_0 {
             xp += 25;
             lebukas += 20;
             kisBoritek = true;
-            UI.targy("KIS BORÍTÉK");
-            UI.parbeszed("Lakatos Ervin", "Na EZ a hozzáállás! Fiúk, szeretni fogjátok ezt az embert!");
+            UI.targy(Lang.t("item.envelopeSmall"));
+            UI.parbeszed(Lang.t("npc.lakatos"), Lang.t("ch2.q.ans1"));
         }
         else if(valasztas3 == 2){
             xp += 10;
             lebukas += 5;
-            UI.parbeszed("Lakatos Ervin", "Lebukás? Haha! Mi vagyunk a hatalom, kisfiam!");
+            UI.parbeszed(Lang.t("npc.lakatos"), Lang.t("ch2.q.ans2"));
         }
         else{
             xp += 5;
-            UI.parbeszed("Lakatos Ervin", "A néma gyereknek az anyja sem érti a szavát...");
+            UI.parbeszed(Lang.t("npc.lakatos"), Lang.t("ch2.q.ans3"));
         }
         UI.enter();
         sc.nextLine();
@@ -204,40 +198,37 @@ public class fityesz1_0 {
         raf.writeBytes("3. valasztas: " + valasztas3 + "\n");
 
 
-        UI.fejezet(3, "A Kongresszusi Próba", "Ha nincs semmi gond, csinálunk valamit, hogy legyen.");
-        System.out.println("Helyszín: Hatalmas rendezvénycsarnok, ezrek a nézőtéren.");
+        UI.fejezet(3, Lang.t("ch3.title"), Lang.t("ch3.quote"));
+        System.out.println(Lang.t("ch3.place"));
         UI.enter();
         sc.nextLine();
-        System.out.println("Két hónap telt el. Szorgalmasan jártál a gyűlésekre, osztottad a szórólapokat,");
-        System.out.println("és megtanultad, mikor kell tapsolni. Most előléptettek: meghívást kaptál a Kongresszusra.");
+        System.out.println(Lang.t("ch3.t1"));
+        System.out.println(Lang.t("ch3.t2"));
         UI.enter();
         sc.nextLine();
 
-        UI.parbeszed("Hangszóró",
-                "Tisztelt Kongresszus! Kérjük, álljanak fel és köszöntsék a Nemzet Megmentőjét,\na Haza Pajzsát, Kapzs Imre Miniszterelnök Urat!");
+        UI.parbeszed(Lang.t("npc.speaker"), Lang.t("ch3.speaker1"));
         UI.enter();
         sc.nextLine();
-        UI.narracio("A tömeg felugrik. Te is.");
+        UI.narracio(Lang.t("ch3.narr1"));
         UI.enter();
         sc.nextLine();
-        UI.parbeszed("Kapzs Imre",
-                "Magyarok! Testvéreim! Mi vagyunk az utolsó bástya a... a... nos, mindenki ellen, aki nem mi vagyunk!");
+        UI.parbeszed(Lang.t("npc.kapzs"), Lang.t("ch3.kapzs1"));
         UI.enter();
         sc.nextLine();
-        UI.narracio("A tömeg nevet. Te is.");
+        UI.narracio(Lang.t("ch3.narr2"));
         UI.enter();
         sc.nextLine();
-        UI.parbeszed("Kapzs Imre",
-                "Tudják, mit mondott nekem ma reggel a szakácsunk? Azt mondta: 'Miniszterelnök Úr, maga a legnagyobb!'\nÉs én mit válaszoltam? Azt mondtam: 'TUDOM!'");
+        UI.parbeszed(Lang.t("npc.kapzs"), Lang.t("ch3.kapzs2"));
         UI.enter();
         sc.nextLine();
-        UI.narracio("Mennydörgő taps. Te is tapsolsz.");
+        UI.narracio(Lang.t("ch3.narr3"));
 
-        UI.narracio("Lakatos megtudta, hogy te is pályázol a választmányi helyre. Nem nézi jó szemmel a versenyt.\nKihív egy \"baráti vitára\" – ami valójában nyilvános megalázási kísérlet.");
+        UI.narracio(Lang.t("ch3.narr4"));
 
         if(xp >= 50){
             szint = 2;
-            UI.szintlepes("HELYI PÁRTTAG");
+            UI.szintlepes(Lang.t("rank.localMember"));
         }
 
         boolean boss1Verve = false;
@@ -250,16 +241,16 @@ public class fityesz1_0 {
             int elozo = 0;
             int ugyanaz = 0;
 
-            UI.boss("Lakatos Ervin");
-            System.out.println("  Ha 3-szor ugyanazt a képességet használod,");
-            System.out.println("  Lakatos használni fogja a FELJELENTÉS képességét!");
+            UI.boss(Lang.t("npc.lakatos"));
+            System.out.println(Lang.t("boss1.rule1"));
+            System.out.println(Lang.t("boss1.rule2"));
             System.out.println();
 
             while(playerHp > 0 && bossHp > 0){
 
-                UI.hpBar("Te", playerHp, 100, true);
-                UI.hpBar("Lakatos", bossHp, 80, false);
-                UI.menu("Taktika?", "Támadás", "Védekezés");
+                UI.hpBar(Lang.t("ui.you"), playerHp, 100, true);
+                UI.hpBar(Lang.t("npc.lakatos.short"), bossHp, 80, false);
+                UI.menu(Lang.t("fight.tactic"), Lang.t("fight.attack"), Lang.t("fight.defend"));
 
                 int player = sc.nextInt();
                 int boss = rnd.nextInt(2) + 1;
@@ -272,24 +263,24 @@ public class fityesz1_0 {
                 elozo = player;
 
                 if(ugyanaz == 3){
-                    UI.kepesseg("FELJELENTÉS", 30);
+                    UI.kepesseg(Lang.t("boss1.skill"), 30);
                     playerHp -= 30;
                 }
 
                 if(player == 1){
                     if(boss == 1){
-                        UI.harciEsemeny("Mindketten támadtatok!", false);
+                        UI.harciEsemeny(Lang.t("fight.bothAttacked"), false);
                         playerHp -= 10;
                         bossHp -= 20;
                     } else {
-                        UI.harciEsemeny("Eltaláltad Lakatos Ervint! -20 HP", true);
+                        UI.harciEsemeny(Lang.t("boss1.hit"), true);
                         bossHp -= 20;
                     }
                 } else {
                     if(boss == 1){
-                        UI.harciEsemeny("Kivédted Lakatos támadását!", true);
+                        UI.harciEsemeny(Lang.t("boss1.blocked"), true);
                     } else {
-                        UI.harciEsemeny("Mindketten védekeztetek.", false);
+                        UI.harciEsemeny(Lang.t("fight.bothDefended"), false);
                     }
                 }
             }
@@ -298,14 +289,14 @@ public class fityesz1_0 {
                 boss1Verve = true;
                 xp += 50;
                 lakatosAktaja = true;
-                UI.harciEsemeny("Legyőzted Lakatos Ervint!", true);
-                UI.targy("LAKATOS AKTÁJA");
+                UI.harciEsemeny(Lang.t("boss1.win"), true);
+                UI.targy(Lang.t("item.lakatosFile"));
             } else {
                 UI.vereseg();
-                UI.menu("Folytatod?", "Újrapróbálás", "Kilépés");
+                UI.menu(Lang.t("fight.continue"), Lang.t("fight.retry"), Lang.t("fight.quit"));
                 int ujra = sc.nextInt();
                 if(ujra == 2){
-                    System.out.println("Játék vége.");
+                    System.out.println(Lang.t("fight.gameover"));
                     raf.close(); sc.close();
                     return;
                 }
@@ -314,28 +305,25 @@ public class fityesz1_0 {
 
         UI.statusz(xp, lebukas, szint);
 
-        UI.fejezet(4, "Az Országos Választmány Árnyai", "A diplomácia nem arról szól, hogy mindig igent mondunk.");
-        System.out.println("Helyszín: Elegáns irodaépület, 5. emelet, panorámás kilátás.");
+        UI.fejezet(4, Lang.t("ch4.title"), Lang.t("ch4.quote"));
+        System.out.println(Lang.t("ch4.place"));
         UI.enter();
         sc.nextLine();
-        System.out.println("Feljutottál a Választmányba. A boríték most már vastagabb, az autó most már szolgálati.");
-        System.out.println("De a játékosok is veszélyesebbek.");
+        System.out.println(Lang.t("ch4.t1"));
+        System.out.println(Lang.t("ch4.t2"));
         UI.enter();
         sc.nextLine();
-        UI.parbeszed("Dr. Péteri Katalin",
-                nev + "! Hallottam magáról. Gyorsan emelkedik. Talán túl gyorsan.\nTudja, mit mondanak a régi rókák?");
+        UI.parbeszed(Lang.t("npc.peteri"), Lang.t("ch4.peteri1", nev));
         UI.enter();
         sc.nextLine();
-        UI.parbeszed("Dr. Péteri Katalin",
-                "De ne aggódjon. Én segíteni akarok. Van itt egy... projekt. EU-s pályázat.\n" +
-                "800 millió forint. A papírmunka már megvan, csak... kell valaki, aki aláírja. Érti?");
+        UI.parbeszed(Lang.t("npc.peteri"), Lang.t("ch4.peteri2"));
         UI.enter();
         sc.nextLine();
 
-        UI.menu("Mit válaszolsz?",
-                "Mennyi az én részem?",
-                "Kinek a projektje ez valójában?",
-                "Ezt át kell gondolnom.");
+        UI.menu(Lang.t("ch4.q"),
+                Lang.t("ch4.q.opt1"),
+                Lang.t("ch4.q.opt2"),
+                Lang.t("ch4.q.opt3"));
 
         int valasztas4 = sc.nextInt();
         sc.nextLine();
@@ -343,18 +331,18 @@ public class fityesz1_0 {
             xp += 30;
             lebukas += 30;
             offshoreKod = true;
-            UI.targy("OFFSHORE SZÁMLA BELÉPÉSI KÓD");
-            UI.parbeszed("Dr. Péteri Katalin", "10%. De ez csak az első üzlet.");
+            UI.targy(Lang.t("item.offshore"));
+            UI.parbeszed(Lang.t("npc.peteri"), Lang.t("ch4.q.ans1"));
         }
         else if(valasztas4 == 2){
             xp += 15;
             lebukas += 10;
-            UI.parbeszed("Dr. Péteri Katalin", "Kíváncsi kis ember... Ez tetszik. De a nevek nem fontosak.");
+            UI.parbeszed(Lang.t("npc.peteri"), Lang.t("ch4.q.ans2"));
         }
         else{
             xp += 5;
             lebukas += 5;
-            UI.parbeszed("Dr. Péteri Katalin", "Gondolja át. De ne túl sokáig. Az idő pénz – szó szerint.");
+            UI.parbeszed(Lang.t("npc.peteri"), Lang.t("ch4.q.ans3"));
         }
         UI.enter();
         sc.nextLine();
@@ -365,49 +353,45 @@ public class fityesz1_0 {
         raf.writeBytes("4. valasztas: " + valasztas4 + "\n");
 
 
-        UI.fejezet(5, "A Parlamenti Útvesztő", "Egyetlen forint közpénzt sem hagyunk kárba veszni.");
-        System.out.println("Helyszín: Parlament, folyosók és titkos szobák.");
+        UI.fejezet(5, Lang.t("ch5.title"), Lang.t("ch5.quote"));
+        System.out.println(Lang.t("ch5.place"));
         UI.enter();
         sc.nextLine();
-        System.out.println("Most már parlamenti képviselő vagy. Van irodád, van asszisztensed,");
-        System.out.println("és van egy hosszú lista arról, hogy kinek mivel tartozol.");
-        UI.enter();
-        sc.nextLine();
-
-        UI.parbeszed("Molnár Gábor",
-                "Gratulálok a mandátumhoz, " + nev + "! Most már az elit része vagy.\n" +
-                "Na, nem az igazi elité, ahhoz még messze vagy. De a kapuban állsz.");
-        UI.enter();
-        sc.nextLine();
-        UI.narracio("Molnár átad egy borítékot.");
-        UI.enter();
-        sc.nextLine();
-        UI.parbeszed("Molnár Gábor",
-                "Ez a holnapi szavazás. Az EU-kritikus állásfoglalás. Te MELLETTE szavazol.\n" +
-                "Nem ELLENE, nem TARTÓZKODSZ. MELLETTE. Világos?");
+        System.out.println(Lang.t("ch5.t1"));
+        System.out.println(Lang.t("ch5.t2"));
         UI.enter();
         sc.nextLine();
 
-        UI.menu("Mit reagálsz?",
-                "Persze. Hol kell aláírni?",
-                "És ha esetleg a saját véleményem más?",
-                "Előbb elolvasom a javaslatot.");
+        UI.parbeszed(Lang.t("npc.molnar"), Lang.t("ch5.molnar1", nev));
+        UI.enter();
+        sc.nextLine();
+        UI.narracio(Lang.t("ch5.narr1"));
+        UI.enter();
+        sc.nextLine();
+        UI.parbeszed(Lang.t("npc.molnar"), Lang.t("ch5.molnar2"));
+        UI.enter();
+        sc.nextLine();
+
+        UI.menu(Lang.t("ch5.q"),
+                Lang.t("ch5.q.opt1"),
+                Lang.t("ch5.q.opt2"),
+                Lang.t("ch5.q.opt3"));
 
         int valasztas5 = sc.nextInt();
         sc.nextLine();
         if(valasztas5 == 1){
             xp += 20;
             lebukas += 15;
-            UI.parbeszed("Molnár Gábor", "Látom, gyorsan tanul. Ez jó.");
+            UI.parbeszed(Lang.t("npc.molnar"), Lang.t("ch5.q.ans1"));
         }
         else if(valasztas5 == 2){
             xp += 10;
             lebukas += 20;
-            UI.parbeszed("Molnár Gábor", "Vélemény? VÉLEMÉNY?! " + nev + ", maga vicces ember.");
+            UI.parbeszed(Lang.t("npc.molnar"), Lang.t("ch5.q.ans2", nev));
         }
         else{
             xp += 5;
-            UI.parbeszed("Molnár Gábor", "Olvasás? Hm. Furcsa szokás. De legyen.");
+            UI.parbeszed(Lang.t("npc.molnar"), Lang.t("ch5.q.ans3"));
         }
         UI.enter();
         sc.nextLine();
@@ -417,13 +401,13 @@ public class fityesz1_0 {
         raf.seek(raf.length());
         raf.writeBytes("5. valasztas: " + valasztas5 + "\n");
 
-        System.out.println("Megtudtad, hogy Dr. Péteri az előléptetésedért cserébe 50%-os részesedést");
-        System.out.println("akar minden jövőbeli üzletedből. Ideje tisztázni a viszonyokat.");
+        System.out.println(Lang.t("ch5.pre1"));
+        System.out.println(Lang.t("ch5.pre2"));
         System.out.println();
 
-        UI.boss("Dr. Péteri Katalin");
-        System.out.println("  Ha nem támadsz, 2 körönként -20 HP sebzést fog okozni");
-        System.out.println("  Péteri MÉDIABOTRÁNY képessége!");
+        UI.boss(Lang.t("npc.peteri"));
+        System.out.println(Lang.t("boss2.rule1"));
+        System.out.println(Lang.t("boss2.rule2"));
         System.out.println();
 
         boolean boss2Verve = false;
@@ -438,29 +422,29 @@ public class fityesz1_0 {
 
                 kor++;
 
-                UI.hpBar("Te", playerHp, 100, true);
-                UI.hpBar("Dr. Péteri", bossHp, 80, false);
-                UI.menu("Taktika?", "Támadás", "Védekezés");
+                UI.hpBar(Lang.t("ui.you"), playerHp, 100, true);
+                UI.hpBar(Lang.t("npc.peteri.short"), bossHp, 80, false);
+                UI.menu(Lang.t("fight.tactic"), Lang.t("fight.attack"), Lang.t("fight.defend"));
 
                 int player = sc.nextInt();
                 int boss = rnd.nextInt(2) + 1;
 
                 if(kor % 2 == 0 && player != 1){
-                    UI.kepesseg("MÉDIABOTRÁNY", 20);
+                    UI.kepesseg(Lang.t("boss2.skill"), 20);
                     playerHp -= 20;
                 }
 
                 if(player == 1 && boss == 2){
-                    UI.harciEsemeny("Péteri kivédte.", false);
+                    UI.harciEsemeny(Lang.t("boss2.blocked"), false);
                 } else if(player == 1 && boss == 1){
-                    UI.harciEsemeny("Mindketten támadtatok!", false);
+                    UI.harciEsemeny(Lang.t("fight.bothAttacked"), false);
                     playerHp -= 10;
                     bossHp -= 10;
                 } else if(player == 2 && boss == 1){
-                    UI.harciEsemeny("Péteri megütött! -20 HP", false);
+                    UI.harciEsemeny(Lang.t("boss2.hit"), false);
                     playerHp -= 20;
                 } else {
-                    UI.harciEsemeny("Mindketten védekeztetek.", false);
+                    UI.harciEsemeny(Lang.t("fight.bothDefended"), false);
                 }
 
                 if(player == 1 && boss != 2){
@@ -470,7 +454,7 @@ public class fityesz1_0 {
 
             if(playerHp <= 0){
                 UI.vereseg();
-                UI.menu("Folytatod?", "Újra", "Kilépés");
+                UI.menu(Lang.t("fight.continue"), Lang.t("fight.again"), Lang.t("fight.quit"));
                 int ujra = sc.nextInt();
                 if(ujra == 2){
                     raf.close(); sc.close();
@@ -480,47 +464,41 @@ public class fityesz1_0 {
                 boss2Verve = true;
                 xp += 80;
                 peteriDosszie = true;
-                UI.harciEsemeny("Legyőzted Dr. Péterit!", true);
-                UI.targy("PÉTERI DOSSZIÉ");
+                UI.harciEsemeny(Lang.t("boss2.win"), true);
+                UI.targy(Lang.t("item.peteriDossier"));
             }
         }
 
         UI.statusz(xp, lebukas, szint);
 
-        UI.fejezet(6, "Az Országos Elnökség Kapujában", "A demokratikus jogrend nem ad felmentést a felelősség alól.");
-        System.out.println("Helyszín: Elit vadászkastély, éjszaka, szivarfüst.");
+        UI.fejezet(6, Lang.t("ch6.title"), Lang.t("ch6.quote"));
+        System.out.println(Lang.t("ch6.place"));
         UI.enter();
         sc.nextLine();
-        System.out.println("Meghívást kaptál a \"belső körbe\". Ahova nem mindenki juthat be.");
-        System.out.println("A szobában a párt legbefolyásosabb emberei ülnek bőrfotelekben.");
+        System.out.println(Lang.t("ch6.t1"));
+        System.out.println(Lang.t("ch6.t2"));
         UI.enter();
         sc.nextLine();
-        UI.parbeszed("Kapzs Imre",
-                "Szóval te vagy " + nev + ". Hallottam rólad. Gyorsan mászol. Ez jó.\n" +
-                "De tudod, mi a különbség a mászó és a csillag között?");
+        UI.parbeszed(Lang.t("npc.kapzs"), Lang.t("ch6.kapzs1", nev));
         UI.enter();
         sc.nextLine();
-        UI.narracio("Mindenki téged néz.");
+        UI.narracio(Lang.t("ch6.narr1"));
         UI.enter();
         sc.nextLine();
-        UI.parbeszed("Kapzs Imre",
-                "A mászó bármikor leeshet. A csillag... a csillag örökké ragyog.\n" +
-                "Na persze, amíg MI ragyogtatjuk.");
+        UI.parbeszed(Lang.t("npc.kapzs"), Lang.t("ch6.kapzs2"));
         UI.enter();
         sc.nextLine();
-        UI.narracio("Mindenki nevet.");
+        UI.narracio(Lang.t("ch6.narr2"));
         UI.enter();
         sc.nextLine();
-        UI.parbeszed("Kapzs Imre",
-                "Figyelj, " + nev + ". Van egy kis... probléma.\n" +
-                "Az ellenzék túl hangos lett. Szükségünk van valakire, aki... nos, aki megoldja. Kreatívan. Érted, ugye?");
+        UI.parbeszed(Lang.t("npc.kapzs"), Lang.t("ch6.kapzs3", nev));
         UI.enter();
         sc.nextLine();
 
-        UI.menu("Mit válaszolsz?",
-                "Bármit, Főnök. Csak mondja, mit.",
-                "Milyen jellegű 'megoldásra' gondol?",
-                "*Meghajolsz, de nem szólsz semmit*");
+        UI.menu(Lang.t("ch6.q"),
+                Lang.t("ch6.q.opt1"),
+                Lang.t("ch6.q.opt2"),
+                Lang.t("ch6.q.opt3"));
 
         int valasztas6 = sc.nextInt();
         sc.nextLine();
@@ -528,18 +506,18 @@ public class fityesz1_0 {
             xp += 50;
             lebukas += 40;
             fonokBizalma = true;
-            UI.targy("FŐNÖK BIZALMA");
-            UI.parbeszed("Kapzs Imre", "NA EZ AZ! Ilyen embereket akarok! Gyere ide, ülj mellém!");
+            UI.targy(Lang.t("item.bossTrust"));
+            UI.parbeszed(Lang.t("npc.kapzs"), Lang.t("ch6.q.ans1"));
         }
         else if(valasztas6 == 2){
             xp += 25;
             lebukas += 15;
-            UI.parbeszed("Kapzs Imre", "Óvatos! Ez bölcs. De néha a bölcsesség lassít.");
+            UI.parbeszed(Lang.t("npc.kapzs"), Lang.t("ch6.q.ans2"));
         }
         else{
             xp += 10;
             lebukas += 5;
-            UI.parbeszed("Kapzs Imre", "Hm. A néma kutya sosem harap. De nem is véd.");
+            UI.parbeszed(Lang.t("npc.kapzs"), Lang.t("ch6.q.ans3"));
         }
         UI.enter();
         sc.nextLine();
@@ -549,53 +527,49 @@ public class fityesz1_0 {
         raf.seek(raf.length());
         raf.writeBytes("6. valasztas: " + valasztas6 + "\n");
 
-        UI.parbeszed("Kapzs Imre", "Rendben. A részletekről később beszélhetünk.");
+        UI.parbeszed(Lang.t("npc.kapzs"), Lang.t("ch6.kapzs4"));
         UI.enter();
         sc.nextLine();
 
-        UI.fejezet(7, "Az Elnökség Trónján", "A törvény mindenkire egyformán vonatkozik.");
-        System.out.println("Helyszín: A párt központja, az elnökségi terem.");
+        UI.fejezet(7, Lang.t("ch7.title"), Lang.t("ch7.quote"));
+        System.out.println(Lang.t("ch7.place"));
         UI.enter();
         sc.nextLine();
-        UI.narracio("Most már az Országos Elnökség tagja vagy. A hatalom szaga érezhető – és kissé rothadt.\nDe te már hozzászoktál.");
-        UI.enter();
-        sc.nextLine();
-
-        UI.parbeszed("Kapzs Imre", nev + "! Gyere, sétáljunk. Van valami, amit csak neked mondok el.");
-        UI.enter();
-        sc.nextLine();
-        System.out.println("Kimentek a kertbe. Senki más nincs ott.");
-        UI.enter();
-        sc.nextLine();
-        UI.parbeszed("Kapzs Imre",
-                "Tudod, én nem leszek örökké. Nem, nem, ne tiltakozz.\n" +
-                "Mindenki halandó. És nekem... nos, nekem szükségem van valakire, aki folytatja.\n" +
-                "Aki érti, hogyan működik ez az egész.");
-        UI.enter();
-        sc.nextLine();
-        UI.narracio("Kapzs Imre megáll és rádnéz.");
-        UI.enter();
-        sc.nextLine();
-        UI.parbeszed("Kapzs Imre",
-                "Te lehetnél az, " + nev + ". De előbb... előbb bizonyítanod kell.\nVan egy utolsó teszt.");
+        UI.narracio(Lang.t("ch7.narr1"));
         UI.enter();
         sc.nextLine();
 
-        UI.menu("Mit válaszolsz?",
-                "Bármi lesz, kész vagyok rá.",
-                "Mi lenne ez a teszt?",
-                "Talán még nem vagyok készen...");
+        UI.parbeszed(Lang.t("npc.kapzs"), Lang.t("ch7.kapzs1", nev));
+        UI.enter();
+        sc.nextLine();
+        System.out.println(Lang.t("ch7.t1"));
+        UI.enter();
+        sc.nextLine();
+        UI.parbeszed(Lang.t("npc.kapzs"), Lang.t("ch7.kapzs2"));
+        UI.enter();
+        sc.nextLine();
+        UI.narracio(Lang.t("ch7.narr2"));
+        UI.enter();
+        sc.nextLine();
+        UI.parbeszed(Lang.t("npc.kapzs"), Lang.t("ch7.kapzs3", nev));
+        UI.enter();
+        sc.nextLine();
+
+        UI.menu(Lang.t("ch7.q"),
+                Lang.t("ch7.q.opt1"),
+                Lang.t("ch7.q.opt2"),
+                Lang.t("ch7.q.opt3"));
 
         int valasztas7 = sc.nextInt();
         sc.nextLine();
         if(valasztas7 == 1){
-            UI.parbeszed("Kapzs Imre", "Bármi? Bármi egy veszélyes szó, kisfiam. De legyen.");
+            UI.parbeszed(Lang.t("npc.kapzs"), Lang.t("ch7.q.ans1"));
         }
         else if(valasztas7 == 2){
-            UI.parbeszed("Kapzs Imre", "Az egyetlen teszt, ami számít: le kell győznöd engem.");
+            UI.parbeszed(Lang.t("npc.kapzs"), Lang.t("ch7.q.ans2"));
         }
         else{
-            UI.parbeszed("Kapzs Imre", "Hm. Az önismeret erény. De a gyávaság nem.");
+            UI.parbeszed(Lang.t("npc.kapzs"), Lang.t("ch7.q.ans3"));
         }
         UI.enter();
         sc.nextLine();
@@ -605,21 +579,19 @@ public class fityesz1_0 {
         raf.seek(raf.length());
         raf.writeBytes("7. valasztas: " + valasztas7 + "\n");
 
-        System.out.println("Helyszín: A párt titkos tanácsterme, éjfél.");
+        System.out.println(Lang.t("boss3.place"));
         UI.enter();
         sc.nextLine();
-        UI.narracio("Ez az a pillanat, amire minden eddig történt felkészített.\n" +
-                "Kapzs tudja, hogy te vagy az egyetlen, aki fenyegetést jelenthet rá.\n" +
-                "És te is tudod: csak egyikőtök maradhat a csúcson.");
+        UI.narracio(Lang.t("boss3.narr"));
 
-        UI.boss("Kapzs Imre");
-        System.out.println("  KÜLÖNLEGES KÉPESSÉGEK:");
-        System.out.println("  Média Manipuláció  — minden 2. körben -15 HP neked");
-        System.out.println("  Hűséges Talpnyalók — 3 körönként +50 HP magának");
-        System.out.println("  Végső Szónoklat    — HP alatt 50: dupla sebzés");
+        UI.boss(Lang.t("npc.kapzs"));
+        System.out.println(Lang.t("boss3.header"));
+        System.out.println(Lang.t("boss3.rule1"));
+        System.out.println(Lang.t("boss3.rule2"));
+        System.out.println(Lang.t("boss3.rule3"));
         System.out.println();
         if(fonokBizalma){
-            System.out.println("  ★ FŐNÖK BIZALMA aktív — Kapzs támadásai 30%-kal gyengébbek!");
+            System.out.println(Lang.t("boss3.trust"));
         }
         System.out.println();
 
@@ -635,44 +607,44 @@ public class fityesz1_0 {
 
                 kor++;
 
-                UI.hpBar("Te", playerHp, 150, true);
-                UI.hpBar("Kapzs Imre", bossHp, 170, false);
-                UI.menu("Taktika?", "Támadás", "Védekezés");
+                UI.hpBar(Lang.t("ui.you"), playerHp, 150, true);
+                UI.hpBar(Lang.t("npc.kapzs"), bossHp, 170, false);
+                UI.menu(Lang.t("fight.tactic"), Lang.t("fight.attack"), Lang.t("fight.defend"));
 
                 int player = sc.nextInt();
                 int boss = rnd.nextInt(2) + 1;
 
                 if(kor % 2 == 0){
                     int sebzes = fonokBizalma ? 10 : 15;
-                    UI.kepesseg("MÉDIA MANIPULÁCIÓ", sebzes);
+                    UI.kepesseg(Lang.t("boss3.skill"), sebzes);
                     playerHp -= sebzes;
                 }
 
                 if(kor % 3 == 0){
                     bossHp = Math.min(bossHp + 50, 300);
-                    UI.harciEsemeny("Kapzs gyógyult! +50 HP", false);
+                    UI.harciEsemeny(Lang.t("boss3.heal"), false);
                 }
 
                 if(player == 1 && boss == 2){
-                    UI.harciEsemeny("Kapzs kivédte.", false);
+                    UI.harciEsemeny(Lang.t("boss3.blocked"), false);
                     int sebzes = (bossHp <= 50) ? 20 : 35;
                     bossHp -= sebzes;
                 } else if(player == 2 && boss == 1){
                     int sebzes = (bossHp <= 50) ? 60 : 30;
-                    UI.harciEsemeny("Kapzs megütött! -" + sebzes + " HP", false);
+                    UI.harciEsemeny(Lang.t("boss3.hit", sebzes), false);
                     playerHp -= sebzes;
                 } else if(player == 1 && boss == 1){
-                    UI.harciEsemeny("Mindketten támadtatok!", false);
+                    UI.harciEsemeny(Lang.t("fight.bothAttacked"), false);
                     playerHp -= 10;
                     bossHp -= 10;
                 } else {
-                    UI.harciEsemeny("Mindketten védekeztetek.", false);
+                    UI.harciEsemeny(Lang.t("fight.bothDefended"), false);
                 }
             }
 
             if(playerHp <= 0){
                 UI.vereseg();
-                UI.menu("Folytatod?", "Újra", "Kilépés");
+                UI.menu(Lang.t("fight.continue"), Lang.t("fight.again"), Lang.t("fight.quit"));
                 int ujra = sc.nextInt();
                 if(ujra == 2){
                     raf.close(); sc.close();
@@ -685,20 +657,19 @@ public class fityesz1_0 {
             }
         }
 
-        UI.narracio("Kapzs Imre \"egészségügyi okokból\" visszavonult. A párt új elnöke: " + nev + ". Te.");
+        UI.narracio(Lang.t("end.narr1", nev));
         UI.enter();
         sc.nextLine();
-        System.out.println("A tükör előtt állsz, az elnöki irodában. Az ablakon túl Budapest fényei.");
+        System.out.println(Lang.t("end.t1"));
         UI.enter();
         sc.nextLine();
-        UI.parbeszed("Te", "4 millió forint adósság. Ezzel kezdődött. És most... most itt vagyok.");
+        UI.parbeszed(Lang.t("npc.you"), Lang.t("end.you1"));
         UI.enter();
         sc.nextLine();
-        UI.narracio("Valaki kopog.");
+        UI.narracio(Lang.t("end.narr2"));
         UI.enter();
         sc.nextLine();
-        UI.parbeszed("Ismeretlen hang",
-                "Elnök úr? Van itt egy fiatal srác. Kovács Péter a neve.\nAzt mondja, tartozik a banknak, és... nos, bármire hajlandó.");
+        UI.parbeszed(Lang.t("npc.unknown"), Lang.t("end.unknown"));
         UI.enter();
         sc.nextLine();
 
