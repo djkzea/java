@@ -649,7 +649,7 @@ public class fityesz1_0 {
                 }
 
                 if(kor % 3 == 0){
-                    bossHp = Math.min(bossHp + 50, 300);
+                    bossHp = Math.min(bossHp + 50, 170);
                     UI.harciEsemeny("Kapzs gyógyult! +50 HP", false);
                 }
 
