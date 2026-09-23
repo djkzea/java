@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 /**
  * Belepesi pont: nyelvvalaszto, majd a jatek.
- * Entry point: language selector, then the game.
+ * Entry point: language selector, then the game
  */
 public class Main {
     public static void main(String[] args) throws IOException {
